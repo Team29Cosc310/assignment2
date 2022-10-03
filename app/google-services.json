@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "975265685821",
+    "project_id": "cosc310assignment2-c53d4",
+    "storage_bucket": "cosc310assignment2-c53d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975265685821:android:43b9d8b2ec492e1dd76554",
+        "android_client_info": {
+          "package_name": "com.example.javabucksim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975265685821-ida5fhcnud846cnndhjclc2ei53jrjil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOnoeycSjNuJfVAXc3SbUIB3CZFkH2aC8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975265685821-ida5fhcnud846cnndhjclc2ei53jrjil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
