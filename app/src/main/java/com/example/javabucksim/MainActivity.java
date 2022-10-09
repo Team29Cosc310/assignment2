@@ -5,11 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,13 +17,13 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mFirebaseAuth;
+    Map <String, Object> userInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        // logout and end activity
+
+        // logout user and end activity
         Button logoutBut = findViewById(R.id.logoutButton);
         logoutBut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,15 +59,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, loginActivity.class));
             finish();
         }
-
     }
 
-    public void getInfo(View view){
+    // method that gets user info from database based on their login user id
+    public void getInfo(){
 
         String doc = mFirebaseAuth.getUid();
 
         DocumentReference docRef = db.collection("users").document(doc);
-
 
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -77,20 +74,30 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Map <String, Object> fields = document.getData();
-                        setInfo((fields));
+                        userInfo = document.getData();
+                        //setInfo((userInfo));
                     } else {
                         // do stuff
                     }
                 } else {
-                    //Toast.makeText(activity_home.this, "Error", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_LONG).show();
                 }
-
 
             }
         });
 
     }
+
+    private void setUpView(String role){
+
+        Button settingsBut = findViewById(R.id.settingsButton);
+        settingsBut.setText(role + "Settings");
+
+
+    }
+
+    /* This was used for testing the database
+    // Saved for temporary reference
 
     private void setInfo(Map<String, Object> fields){
 
@@ -112,5 +119,7 @@ public class MainActivity extends AppCompatActivity {
         result.setText(res);
 
     }
+
+     */
 
 }
