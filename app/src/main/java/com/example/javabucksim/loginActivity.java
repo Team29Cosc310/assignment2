@@ -73,4 +73,15 @@ public class loginActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        EditText etEmail = findViewById(R.id.editTextEmail);
+        EditText etPW = findViewById(R.id.editTextPW);
+
+        etEmail.setText("");
+        etPW.setText("");
+    }
 }
