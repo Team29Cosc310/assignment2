@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">javabucksIM</string>
+
+    <string-array name="role_array">
+        <item>"employee"</item>
+        <item>"manager"</item>
+        <item>"admin"</item>
+    </string-array>
+
 </resources>
