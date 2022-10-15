@@ -35,8 +35,8 @@ public class loginActivity extends AppCompatActivity {
         loginBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = etEmail.getText().toString();
-                String pw = etPW.getText().toString();
+                String email = etEmail.getText().toString().trim();
+                String pw = etPW.getText().toString().trim();
 
                 if (!email.isEmpty() && !pw.isEmpty()){
 
@@ -66,6 +66,8 @@ public class loginActivity extends AppCompatActivity {
                                 }
                             });
 
+                } else {
+                    Toast.makeText(loginActivity.this,"Please enter valid email and password.",Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -84,4 +86,13 @@ public class loginActivity extends AppCompatActivity {
         etEmail.setText("");
         etPW.setText("");
     }
+
+    // to be implemented
+    public void forgotPassword(View view){
+
+        Intent intent = new Intent(loginActivity.this, forgotPassword.class);
+        startActivity(intent);
+
+    }
+
 }

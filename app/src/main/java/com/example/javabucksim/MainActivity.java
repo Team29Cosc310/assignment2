@@ -2,11 +2,14 @@ package com.example.javabucksim;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
+        ProgressBar progBar = findViewById(R.id.indeterminateBar);
+        progBar.setVisibility(View.GONE);
+
 
         if (mFirebaseUser != null) {
             // user is logged in
@@ -51,9 +57,6 @@ public class MainActivity extends AppCompatActivity {
         setUpSettings();
         setUpLogout();
 
-        // logout user and end activity
-
-
     }
 
     // check if user is logged in
@@ -61,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
+
+        showLoading();
 
         FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
@@ -73,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // does nothing extra currently
     @Override
     protected void onResume() {
         super.onResume();
@@ -80,6 +86,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // show loading circle, hide layout
+    private void showLoading(){
+
+        ProgressBar progBar = findViewById(R.id.indeterminateBar);
+        ConstraintLayout layout = findViewById(R.id.main_layout);
+
+        layout.setVisibility(View.GONE);
+        progBar.setVisibility(View.VISIBLE);
+
+    }
+
+    // end loading circle, show layout
+    private void endLoading(){
+
+        ProgressBar progBar = findViewById(R.id.indeterminateBar);
+        ConstraintLayout layout = findViewById(R.id.main_layout);
+
+        progBar.setVisibility(View.GONE);
+        layout.setVisibility(View.VISIBLE);
+
+    }
+
+    // settings on click button
     public void setUpSettings(){
 
         Button logoutBut = findViewById(R.id.settingsButton);
@@ -94,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // logout user and end activity
     private void setUpLogout(){
 
         Button logoutBut = findViewById(R.id.logoutButton);
@@ -137,17 +167,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //changes settings text based on role
     public void setUpView(){
 
         Button settingsBut = findViewById(R.id.settingsButton);
         settingsBut.setText(role + " Settings");
 
+        endLoading();
+
+
 
     }
 
-    // This was used for testing the database
-    // Saved for temporary reference
 
+
+    // puts user data in bundle
     private void setInfo(Map<String, Object> fields){
 
 
@@ -162,18 +196,6 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("email", email);
         bundle.putString("password", pw);
         bundle.putString("role", role);
-
-        /*
-        String res = String.format("Firstname: %s \n" +
-                "Lastname: %s \n" +
-                "Email: %s \n" +
-                "Password: %s \n" +
-                "Role: %s \n", firstName,lastName,email,pw,role);
-
-        TextView result = findViewById(R.id.textViewResult);
-        result.setText(res);
-
-         */
 
     }
 
