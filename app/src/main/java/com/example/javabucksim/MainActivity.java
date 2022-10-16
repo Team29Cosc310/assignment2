@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        endLoading();
 
     }
 
@@ -173,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         Button settingsBut = findViewById(R.id.settingsButton);
         settingsBut.setText(role + " Settings");
 
-        endLoading();
+
 
 
 

@@ -25,6 +25,7 @@
         <activity
             android:name=".deleteAccount"
             android:exported="false"
+            android:label="Delete Account"
             android:parentActivityName=".settingsActivity">
             <meta-data
                 android:name="android.app.lib_name"
@@ -33,6 +34,7 @@
         <activity
             android:name=".editUsers"
             android:exported="false"
+            android:label="Edit User Accounts"
             android:parentActivityName=".settingsActivity">
             <meta-data
                 android:name="android.app.lib_name"
@@ -41,6 +43,7 @@
         <activity
             android:name=".createAccount"
             android:exported="false"
+            android:label="Create Account"
             android:parentActivityName=".settingsActivity">
             <meta-data
                 android:name="android.app.lib_name"
@@ -49,6 +52,7 @@
         <activity
             android:name=".editAccount"
             android:exported="false"
+            android:label="Edit Account"
             android:parentActivityName=".settingsActivity">
             <meta-data
                 android:name="android.app.lib_name"

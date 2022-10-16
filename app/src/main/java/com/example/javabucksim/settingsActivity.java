@@ -1,6 +1,7 @@
 package com.example.javabucksim;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,15 +11,31 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class settingsActivity extends AppCompatActivity {
 
     private Bundle bundle;
     private String role;
+    FirebaseFirestore db;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
 
         Intent intent = getIntent();
@@ -34,6 +51,9 @@ public class settingsActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+
+        checkChanges();
+
         super.onResume();
     }
 
@@ -56,6 +76,47 @@ public class settingsActivity extends AppCompatActivity {
 
         TextView result = findViewById(R.id.curUserInfo);
         result.setText(res);
+
+    }
+
+    private void checkChanges(){
+
+        String userId = mAuth.getUid();
+
+        final DocumentReference docRef = db.collection("users").document(userId);
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    //Log.w(TAG, "Listen failed.", e);
+                    return;
+                }
+
+                String source = snapshot != null && snapshot.getMetadata().hasPendingWrites()
+                        ? "Local" : "Server";
+
+                if (snapshot != null && snapshot.exists()) {
+                    Map <String, Object> updatedData = snapshot.getData();
+
+                    String newFirstName = updatedData.get("firstName").toString();
+                    String newLastName = updatedData.get("lastName").toString();
+                    String newEmail = updatedData.get("email").toString();
+                    String newPassword = updatedData.get("password").toString();
+
+                    bundle.putString("firstName", newFirstName);
+                    bundle.putString("lastName", newLastName);
+                    bundle.putString("email", newEmail);
+                    bundle.putString("password", newPassword);
+
+                    showCurUserInfo();
+
+                } else {
+                    //Log.d(TAG, source + " data: null");
+                }
+            }
+        });
+
 
     }
 
