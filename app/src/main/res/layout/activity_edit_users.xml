@@ -2,20 +2,55 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".editUsers">
 
-    <Button
-        android:id="@+id/editUsr_submit_button"
+    <!--Recycler view for displaying
+        our data from Firestore-->
+
+    <!--Progress bar for showing loading screen-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVUsers"
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        android:layout_marginStart="-1dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUsr_submit_button"
+        app:layout_constraintVertical_bias="0.477" />
+
+    <ProgressBar
+        android:id="@+id/idProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="submit"
-        android:text="Submit"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/editUsr_submit_button"
+        android:layout_width="159dp"
+        android:layout_height="53dp"
+        android:onClick="getAllUsers"
+        android:text="Get All Users"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.051" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

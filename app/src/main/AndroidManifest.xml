@@ -15,6 +15,15 @@
         android:theme="@style/Theme.JavabucksIM"
         tools:targetApi="31">
         <activity
+            android:name=".editUserAccounts"
+            android:label="Edit User Info"
+            android:parentActivityName=".editUsers"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".forgotPassword"
             android:exported="false"
             android:parentActivityName=".loginActivity">
