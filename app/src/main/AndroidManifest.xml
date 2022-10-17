@@ -32,6 +32,10 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".reportActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".deleteAccount"
             android:exported="false"
             android:label="Delete Account"
