@@ -1,4 +1,5 @@
-package com.example.assignment2;
+package com.example.javabucksim;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
