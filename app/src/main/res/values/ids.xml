@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="background_top" type="id" />
+    <item name="itemDetails" type="id" />
+    <item name="darkRoast" type="id" />
+    <item name="darkRoast_details" type="id" />
+    <item name="price_12oz" type="id" />
+    <item name="price_16oz" type="id" />
+    <item name="price_20oz" type="id" />
+    <item name="dark_roast_photo" type="id" />
+    <item name="item_details_background" type="id" />
+    <item name="calories" type="id" />
+    <item name="protein" type="id" />
+    <item name="fat" type="id" />
+    <item name="carbs" type="id" />
+    <item name="fiber" type="id" />
+    <item name="sugar" type="id" />
+    <item name="P_C_Details" type="id" />
+</resources>
