@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editAccount">
+    tools:context=".editUsers">
 
     <TextView
         android:id="@+id/textView5"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_view"
         android:padding="5dp"
-        android:text="Edit Personal Info"
+        android:text="Edit User Info"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.071" />
 
     <Button
-        android:id="@+id/editAcc_submit_button"
+        android:id="@+id/editUsr_submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="submit"
@@ -55,7 +55,7 @@
             android:text="First name" />
 
         <EditText
-            android:id="@+id/et_editAcc_fn"
+            android:id="@+id/et_editUsr_fn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -69,7 +69,7 @@
             android:text="Last Name" />
 
         <EditText
-            android:id="@+id/et_editAcc_ln"
+            android:id="@+id/et_editUsr_ln"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -83,7 +83,7 @@
             android:text="Email" />
 
         <EditText
-            android:id="@+id/et_editAcc_email"
+            android:id="@+id/et_editUsr_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -98,7 +98,7 @@
             android:text="Change password" />
 
         <EditText
-            android:id="@+id/et_editAcc_pw"
+            android:id="@+id/et_editUsr_pw"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"

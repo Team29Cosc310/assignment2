@@ -68,6 +68,15 @@ public class createAccount extends AppCompatActivity {
         String lName = ((EditText) findViewById(R.id.createAcc_getLastName)).getText().toString();
         String role = ((Spinner) findViewById(R.id.role_spinner)).getSelectedItem().toString();
 
+        if (email.isEmpty() || password.isEmpty()){
+            Toast.makeText(createAccount.this,"Please enter valid email and password",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (password.length() < 6){
+            Toast.makeText(createAccount.this,"Password must be at least 6 characters",Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         newUser = new HashMap<>();
         newUser.put("email", email);
