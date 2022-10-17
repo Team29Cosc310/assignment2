@@ -6,5 +6,62 @@
         <item>"manager"</item>
         <item>"admin"</item>
     </string-array>
+    <string name="item_details">Item Details</string>
+    <string name="u_dark_roast">
+            <u>Dark Roast</u>
+    </string>
+    <string name="price">Price Per Size</string>
+    <string name="details_background">details_background</string>
+    <string name="smol">Smol</string>
+    <string name="mid">Mid</string>
+    <string name="chonk">Chonk</string>
+    <string name="calories">Calories:</string>
+    <string name="protein">Protein:</string>
+    <string name="fat">Fat:</string>
+    <string name="carbohydrates">Carbohydrates:</string>
+    <string name="fiber">Fiber:</string>
+    <string name="sugar">Sugar:</string>
+    <string name="_2_4">2.4</string>
+    <string name="_0_3g">0.3g</string>
+    <string name="_0g">0g</string>
+    <string name="_3_2">3.2</string>
+    <string name="_0_4g">0.4g</string>
+    <string name="_4">4</string>
+    <string name="_0_5g">0.5g</string>
+    <string name="background_facts">background_facts</string>
+    <string name="back">BACK</string>
+    <string name="smol_12_oz_2_75">Smol (12 oz): $2.75</string>
+    <string name="mid_16_oz_3_50">Mid (16 oz): $3.50</string>
+    <string name="chonk_20_oz_4_25">Chonk (20 oz): $4.25</string>
+    <string name="select_a_category">Select A Category</string>
+    <string name="hot_coffees">Hot Coffees</string>
+    <string name="cold_coffees">Cold Coffees</string>
+    <string name="hot_drinks">Hot Drinks</string>
+    <string name="cold_drinks">Cold Drinks</string>
+    <string name="other">Other</string>
+    <string name="select_an_item">Select an Item</string>
+    <string name="dark_roast">Dark Roast</string>
+    <string name="medium_roast">Medium Roast</string>
+    <string name="blonde_roast">Blonde Roast</string>
+    <string name="latte">Latte</string>
+    <string name="cappuccino">Cappuccino</string>
+    <string name="iced_coffee">Coffee</string>
+    <string name="iced_latte">Latte</string>
+    <string name="cold_brew">Cold Brew</string>
+    <string name="iced_cappuccino">Cappuccino</string>
+    <string name="seasonal">Seasonal</string>
+    <string name="matcha_latte">Matcha Latte</string>
+    <string name="chai_latte">Chai Latte</string>
+    <string name="hot_chocolate">Hot Chocolate</string>
+    <string name="tea">Tea</string>
+    <string name="flavour_shots">Flavour Shots</string>
+    <string name="espresso">Espresso</string>
+    <string name="milk">Milk</string>
+    <string name="cream">Cream</string>
+    <string name="sugar1">Sugar</string>
+    <string name="iced_cappuccino1">Iced Cappuccino</string>
+    <string name="iced_latte1">Iced Latte</string>
+    <string name="iced_coffee1">Iced Coffee</string>
+    <string name="juice">Juice</string>
 
 </resources>
