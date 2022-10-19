@@ -1,4 +1,5 @@
-package com.example.assignment2;
+package com.example.javabucksim;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -8,7 +9,7 @@ import android.widget.Button;
 
 public class Categories extends AppCompatActivity {
 
-    Button hotCof, coldCof, hotD, coldD, other;
+    Button hotCof, coldCof, hotD, coldD, other, back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,16 @@ public class Categories extends AppCompatActivity {
         hotD = findViewById(R.id.hotD);
         coldD = findViewById(R.id.coldD);
         other = findViewById(R.id.other);
+
+        back = findViewById(R.id.backButton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back = new Intent(Categories.this, MainActivity.class);
+                startActivity(back);
+            }
+        });
 
         hotCof.setOnClickListener(new View.OnClickListener() {
             @Override
