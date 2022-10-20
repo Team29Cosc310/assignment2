@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setUpSettings();
+        setUpReports();
         setUpLogout();
 
     }
@@ -122,6 +123,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    // reports on click button
+    public void setUpReports() {
+        Button reportButton = findViewById(R.id.reportButton);
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, reportActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // logout user and end activity
