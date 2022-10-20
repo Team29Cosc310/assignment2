@@ -50,7 +50,16 @@ public class reportActivity extends AppCompatActivity {
     private void getReportFromDB() {
 
         TextView numOfDrinksSold = (TextView) findViewById(R.id.textViewNumberOfDrinksSold);
-        String doc = mFirebaseAuth.getUid();
+        TextView rateOfOrders = (TextView) findViewById(R.id.textViewRateOfOrders);
+        TextView totalSalesRevenue = (TextView) findViewById(R.id.textViewTotalSalesRevenue);
+        TextView netProfit = (TextView) findViewById(R.id.textViewNetProfit);
+        TextView numOfCustomers = (TextView) findViewById(R.id.textViewNumberOfCustomers);
+        TextView numOfEmployees = (TextView) findViewById(R.id.textViewNumberOfEmployees);
+        TextView employeeWagePerHour = (TextView) findViewById(R.id.textViewEmployeeWagePerHour);
+        TextView employeeWorkHours = (TextView) findViewById(R.id.textViewEmployeeWorkHours);
+        TextView totalEmployeeCosts = (TextView) findViewById(R.id.textViewTotalEmployeeCosts);
+
+        String doc = "AYtNyBDk7j01DYrlZFIV";
         DocumentReference docRef = db.collection("statistics").document(doc);
 
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -61,6 +70,14 @@ public class reportActivity extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> stats = document.getData();
                         numOfDrinksSold.setText("Number of Drinks sold: " + stats.get("numberOfDrinksSold").toString());
+                        rateOfOrders.setText("Rate of Orders (per hour): " + stats.get("rateOfOrders").toString());
+                        totalSalesRevenue.setText("Total Sales Revenue: " + stats.get("totalSalesRevenue").toString());
+                        netProfit.setText("Net Profit: " + stats.get("netProfit").toString());
+                        numOfCustomers.setText("Number of Customers: " + stats.get("numberOfCustomers").toString());
+                        numOfEmployees.setText("Number of Employees: " + stats.get("numberOfEmployees").toString());
+                        employeeWagePerHour.setText("Employee wage per hour: " + stats.get("employeeWagesPerHour").toString());
+                        employeeWorkHours.setText("Employee work hours: " + stats.get("employeeHours").toString());
+                        totalEmployeeCosts.setText("Total employee costs: " + stats.get("totalEmployeeCosts").toString());
                     }
                     else {
 
