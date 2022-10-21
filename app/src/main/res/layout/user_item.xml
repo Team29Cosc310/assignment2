@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:padding="2dp"
             android:text="Email"
-            android:textColor="#12664F"
+            android:textColor="@color/purple_500"
             android:textSize="18sp"
             android:textStyle="bold" />
 
