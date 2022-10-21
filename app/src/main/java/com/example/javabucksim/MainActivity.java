@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar progBar = findViewById(R.id.indeterminateBar);
         progBar.setVisibility(View.GONE);
 
-
         if (mFirebaseUser != null) {
             // user is logged in
             try {
@@ -55,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setUpSettings();
+        setUpReports();
         setUpLogout();
 
     }
@@ -124,6 +124,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // reports on click button
+    public void setUpReports() {
+        Button reportButton = findViewById(R.id.reportButton);
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, reportActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     // logout user and end activity
     private void setUpLogout(){
 
@@ -178,6 +190,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+    public void placeOrder(View view)
+    {
+        Button order = findViewById(R.id.place_order);
+        Intent intent = new Intent(this, autoOrder.class);
+        startActivity(intent);
     }
 
 
