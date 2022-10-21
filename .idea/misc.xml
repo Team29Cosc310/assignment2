@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UBC/COSC 310/Project/assignment2/app/src/main/res/layout/activity_create_account.xml" value="0.2078804347826087" />
+        <entry key="..\:/UBC/COSC 310/Project/assignment2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/UBC/COSC 310/Project/assignment2/app/src/main/res/layout/activity_report.xml" value="0.33" />
+        <entry key="..\:/UBC/COSC 310/Project/assignment2/app/src/main/res/layout/activity_settings.xml" value="0.2078804347826087" />
         <entry key="app/src/main/res/layout/activity_categories.xml" value="0.24010416666666667" />
       </map>
     </option>
