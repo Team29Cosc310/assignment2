@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C6D4FF"
     tools:context=".loginActivity">
 
     <EditText
@@ -52,7 +53,8 @@
     <Button
         android:id="@+id/loginButton"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:background="@drawable/round_btn"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/editTextPW"

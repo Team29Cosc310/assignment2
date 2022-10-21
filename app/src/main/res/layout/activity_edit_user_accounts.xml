@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C6D4FF"
     tools:context=".editUsers">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner_view"
+        android:background="@drawable/round_btn"
         android:padding="5dp"
         android:text="Edit User Info"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/bottle_green"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:onClick="submit"
         android:text="Submit"
+        android:background="@drawable/round_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

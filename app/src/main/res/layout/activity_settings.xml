@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C6D4FF"
     tools:context=".settingsActivity">
 
     <LinearLayout
@@ -18,6 +19,14 @@
         app:layout_constraintVertical_bias="0.091">
 
         <TextView
+            android:id="@+id/infoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Account Info:"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/curUserInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,9 +35,10 @@
 
         <Button
             android:id="@+id/createAccBut"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
             android:onClick="editAccount"
             android:text="Edit Account" />
     </LinearLayout>
@@ -46,24 +56,26 @@
         app:layout_constraintVertical_bias="0.805">
 
         <Button
-            android:id="@+id/editAccBut"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:onClick="createAccount"
-            android:text="Create Account" />
-
-        <Button
             android:id="@+id/editUsersBut"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"
             android:onClick="editUsers"
             android:text="Edit Users" />
 
         <Button
+            android:id="@+id/editAccBut"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="createAccount"
+            android:text="Create Account" />
+
+        <Button
             android:id="@+id/delAccBut"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:onClick="deleteAccount"

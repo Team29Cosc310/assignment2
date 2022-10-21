@@ -67,7 +67,7 @@ public class settingsActivity extends AppCompatActivity {
         String pw = bundle.getString("password");
         role = bundle.getString("role");
 
-        String res = String.format("Account Info: \n" +
+        String res = String.format(
                 "Firstname: %s \n" +
                 "Lastname: %s \n" +
                 "Email: %s \n" +

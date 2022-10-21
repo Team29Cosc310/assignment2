@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C6D4FF"
     tools:context=".editAccount">
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner_view"
+        android:background="@drawable/round_btn"
         android:padding="5dp"
         android:text="Edit Personal Info"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/bottle_green"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
