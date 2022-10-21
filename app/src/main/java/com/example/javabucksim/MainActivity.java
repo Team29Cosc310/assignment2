@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar progBar = findViewById(R.id.indeterminateBar);
         progBar.setVisibility(View.GONE);
 
-
         if (mFirebaseUser != null) {
             // user is logged in
             try {
@@ -191,6 +190,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+    public void placeOrder(View view)
+    {
+        Button order = findViewById(R.id.place_order);
+        Intent intent = new Intent(this, autoOrder.class);
+        startActivity(intent);
     }
 
 
