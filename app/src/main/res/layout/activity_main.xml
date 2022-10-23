@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/myrtle_green">
 
     <TextView
         android:id="@+id/textViewResult"
@@ -28,6 +29,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.38" />
+    <TextView
+        android:id="@+id/welcomeMessage"
+        android:text="Welcome!"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="160sp"
+        android:layout_marginTop="40sp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_layout"
@@ -45,6 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Admin Settings"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,9 +72,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Logout"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.936" />
@@ -68,6 +87,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="View Report"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,10 +99,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Place Order"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm"
             android:onClick="placeOrder"
+            android:fontFamily="@font/americantypewriter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.918"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063" />
+        <Button
+            android:id="@+id/items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Items"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.118"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.063" />

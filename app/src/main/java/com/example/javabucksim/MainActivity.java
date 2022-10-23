@@ -29,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private String role;
     Bundle bundle = new Bundle();
+    Button items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        items = findViewById(R.id.items);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -57,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
         setUpReports();
         setUpLogout();
 
+        items.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Categories.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // check if user is logged in
@@ -185,12 +195,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button settingsBut = findViewById(R.id.settingsButton);
         settingsBut.setText(role + " Settings");
-
-
-
-
-
     }
+
     public void placeOrder(View view)
     {
         Button order = findViewById(R.id.place_order);
@@ -217,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("role", role);
 
     }
+
 
      //
 

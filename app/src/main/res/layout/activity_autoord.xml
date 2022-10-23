@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/myrtle_green">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orderView"
@@ -21,6 +22,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/americantypewriter"
         android:text="Confirm"
+        android:textColor="@color/lavender_blue"
+        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.861"

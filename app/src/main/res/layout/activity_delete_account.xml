@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".deleteAccount">
+    tools:context=".deleteAccount"
+    android:background="@color/myrtle_green">
 
     <Button
         android:id="@+id/delete_submit_button"
@@ -12,6 +13,9 @@
         android:layout_height="wrap_content"
         android:onClick="submit"
         android:text="Submit"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/lavender_blue"
+        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

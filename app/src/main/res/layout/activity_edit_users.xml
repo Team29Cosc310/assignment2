@@ -5,7 +5,8 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editUsers">
+    tools:context=".editUsers"
+    android:background="@color/myrtle_green">
 
     <!--Recycler view for displaying
         our data from Firestore-->
@@ -45,6 +46,9 @@
         android:layout_height="53dp"
         android:onClick="getAllUsers"
         android:text="Get All Users"
+        android:textColor="@color/lavender_blue"
+        android:fontFamily="@font/americantypewriter"
+        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

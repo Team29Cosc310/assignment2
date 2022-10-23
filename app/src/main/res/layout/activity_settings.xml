@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".settingsActivity">
+    tools:context=".settingsActivity"
+    android:background="@color/myrtle_green">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -22,7 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/createAccBut"
@@ -30,7 +33,10 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:onClick="editAccount"
-            android:text="Edit Account" />
+            android:text="Edit Account"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm" />
     </LinearLayout>
 
     <LinearLayout
@@ -51,7 +57,10 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:onClick="createAccount"
-            android:text="Create Account" />
+            android:text="Create Account"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm" />
 
         <Button
             android:id="@+id/editUsersBut"
@@ -59,7 +68,10 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:onClick="editUsers"
-            android:text="Edit Users" />
+            android:text="Edit Users"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm" />
 
         <Button
             android:id="@+id/delAccBut"
@@ -67,7 +79,10 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:onClick="deleteAccount"
-            android:text="Delete Account" />
+            android:text="Delete Account"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
