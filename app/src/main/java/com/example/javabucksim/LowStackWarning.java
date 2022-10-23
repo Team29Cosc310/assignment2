@@ -1,71 +1,91 @@
 package com.example.javabucksim;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import java.util.Map;
 
 public class LowStackWarning extends AppCompatActivity {
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("items").child("tea");;
-    String productName;
+    FirebaseAuth mFirebaseAuth;
+    FirebaseFirestore firebaseFirestore;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public void showAlert(View view) {
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Warning");
-        alert.setMessage("");
-        alert.setPositiveButton("Order now", new DialogInterface.OnClickListener() {
+    String chai;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        String doc = "AYtNyBDk7j01DYrlZFIV";
+
+        DocumentReference documentReference = firebaseFirestore.collection("statistics").document(doc);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                chai = value.getString("chai");
             }
         });
-        alert.setNegativeButton("Not now!", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        alert.create().show();
+        alert(chai);
     }
 
-    public void dataCheck() {
-        System.out.println("Yes!!!!!!!!!!!!!!!!");
-        databaseReference.addValueEventListener(new ValueEventListener() {
+    public void alert(String string) {
+        Button test = (Button) findViewById(R.id.test);
+
+        test.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists())
-                {
+            public void onClick(View view) {
 
-                    productName = snapshot.getValue().toString();
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
+                AlertDialog.Builder builder = new AlertDialog.Builder(LowStackWarning.this);
+
+                builder.setCancelable(true);
+                builder.setTitle("Low stock warning");
+                builder.setMessage("Please resupply your stock!" + chai);
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.setPositiveButton("Order now", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.show();
             }
         });
-        System.out.println("MY data:" + productName);
+    }
+    public void getData() {
+
+        String doc = "AYtNyBDk7j01DYrlZFIV";
+        DocumentReference docRef = db.collection("statistics").document(doc);
+
 
     }
-
-
 }
