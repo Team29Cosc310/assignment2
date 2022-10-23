@@ -59,14 +59,7 @@ public class MainActivity extends AppCompatActivity {
         setUpSettings();
         setUpReports();
         setUpLogout();
-
-        items.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Categories.class);
-                startActivity(intent);
-            }
-        });
+        setUpItemDetails();
     }
 
     // check if user is logged in
@@ -224,7 +217,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    private void setUpItemDetails(){
+        items.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Categories.class);
+                startActivity(intent);
+            }
+        });
+    }
      //
 
 }
