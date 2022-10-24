@@ -33,8 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="TextView"
-            android:fontFamily="@font/americantypewriter"
-            android:textColor="@color/white"/>
+            android:textColor="@color/bottle_green" />
 
         <Button
             android:id="@+id/createAccBut"
@@ -43,10 +42,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:onClick="editAccount"
-            android:text="Edit Account"
-            android:fontFamily="@font/americantypewriter"
-            android:textColor="@color/lavender_blue"
-            android:backgroundTint="@color/rhythm" />
+            android:text="Edit Account" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,10 +66,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="5dp"
             android:onClick="editUsers"
-            android:text="Edit Users"
-            android:fontFamily="@font/americantypewriter"
-            android:textColor="@color/lavender_blue"
-            android:backgroundTint="@color/rhythm" />
+            android:text="Edit Users" />
 
         <Button
             android:id="@+id/editAccBut"
@@ -90,10 +83,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:onClick="deleteAccount"
-            android:text="Delete Account"
-            android:fontFamily="@font/americantypewriter"
-            android:textColor="@color/lavender_blue"
-            android:backgroundTint="@color/rhythm" />
+            android:text="Delete Account" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

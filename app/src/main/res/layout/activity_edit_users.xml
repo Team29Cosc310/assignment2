@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="553dp"
         android:layout_marginStart="-1dp"
+        android:background="#C6D4FF"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

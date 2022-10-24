@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
     private String role;
 
 
-
-    String chai;
     Bundle bundle = new Bundle();
     Button items;
 
@@ -69,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         setUpSettings();
         setUpReports();
         setUpLogout();
-        lowStackWarning();
         setUpItemDetails();
 
     }
@@ -239,49 +236,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
      //
-    void lowStackWarning() {
-        String doc = "j9BQe3OtLP6XnUK66MWK";
-
-
-        DocumentReference documentReference = db.collection("Inventory").document(doc);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                chai = value.getString("chai");
-                alert(chai);
-            }
-        });
-    }
-
-    public void alert(String chai) {
-        Button test = (Button) findViewById(R.id.test);
-
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
 
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
-                builder.setCancelable(true);
-                builder.setTitle("Low stock warning");
-                builder.setMessage("Please resupply your stock!");
-
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                builder.setPositiveButton("Order now", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-                builder.show();
-            }
-        });
-    }
 }

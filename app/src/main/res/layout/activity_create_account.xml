@@ -88,10 +88,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="7dp"
-            android:text="Select role:"
-            android:textSize="18dp"
             android:fontFamily="@font/americantypewriter"
-            android:textColor="@color/white"
+            android:text="Select role:"
+            android:textColor="@color/myrtle_green"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
