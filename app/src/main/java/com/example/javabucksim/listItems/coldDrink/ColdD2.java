@@ -23,8 +23,7 @@ public class ColdD2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(ColdD2.this, ColdD.class);
-                startActivity(back);
+                finish();
             }
         });
     }

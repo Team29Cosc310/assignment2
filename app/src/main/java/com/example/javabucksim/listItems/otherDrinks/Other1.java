@@ -23,8 +23,7 @@ public class Other1 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(Other1.this, Other.class);
-                startActivity(back);
+                finish();
             }
         });
     }

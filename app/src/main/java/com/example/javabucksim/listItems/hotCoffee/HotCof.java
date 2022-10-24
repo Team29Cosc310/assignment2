@@ -30,8 +30,7 @@ public class HotCof extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(HotCof.this, Categories.class);
-                startActivity(back);
+                finish();
             }
         });
 

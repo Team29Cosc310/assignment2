@@ -23,8 +23,7 @@ public class HotCof3 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(HotCof3.this, HotCof.class);
-                startActivity(back);
+                finish();
             }
         });
     }

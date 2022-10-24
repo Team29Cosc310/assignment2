@@ -23,8 +23,7 @@ public class ColdCof2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(ColdCof2.this, ColdCof.class);
-                startActivity(back);
+                finish();
             }
         });
     }

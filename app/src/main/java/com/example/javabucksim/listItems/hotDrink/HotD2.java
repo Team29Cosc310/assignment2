@@ -23,8 +23,7 @@ public class HotD2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(HotD2.this, HotD.class);
-                startActivity(back);
+                finish();
             }
         });
     }
