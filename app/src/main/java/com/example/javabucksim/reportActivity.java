@@ -46,8 +46,7 @@ public class reportActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(reportActivity.this, MainActivity.class);
-                startActivity(back);
+                finish();
             }
         });
     }

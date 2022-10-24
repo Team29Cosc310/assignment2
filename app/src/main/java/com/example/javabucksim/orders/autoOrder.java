@@ -65,8 +65,7 @@ public class autoOrder extends AppCompatActivity {
 
     public void back(View view) {
         Button back = findViewById(R.id.backButton);
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 
 }

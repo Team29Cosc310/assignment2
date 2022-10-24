@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -50,8 +51,7 @@ public class settingsActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(settingsActivity.this, MainActivity.class);
-                startActivity(back);
+                finish();
             }
         });
 
