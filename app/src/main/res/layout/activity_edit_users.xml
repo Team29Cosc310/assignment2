@@ -5,8 +5,10 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editUsers"
-    android:background="@color/myrtle_green">
+
+    android:background="#C6D4FF"
+    tools:context=".editUsers">
+
 
     <!--Recycler view for displaying
         our data from Firestore-->
@@ -18,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="553dp"
         android:layout_marginStart="-1dp"
+        android:background="#C6D4FF"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -42,13 +45,12 @@
 
     <Button
         android:id="@+id/editUsr_submit_button"
-        android:layout_width="159dp"
-        android:layout_height="53dp"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="@color/rhythm"
         android:onClick="getAllUsers"
         android:text="Get All Users"
-        android:textColor="@color/lavender_blue"
-        android:fontFamily="@font/americantypewriter"
-        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

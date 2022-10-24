@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".createAccount"
-    android:background="@color/myrtle_green">
+    android:background="#C6D4FF"
+    tools:context=".createAccount">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner_view"
+        android:background="@drawable/round_btn"
         android:padding="5dp"
         android:text="CREATE ACCOUNT"
-        android:textColor="@color/white"
+        android:textColor="@color/bottle_green"
         android:textSize="20dp"
         android:textStyle="bold"
         android:fontFamily="@font/americantypewriter"
@@ -87,10 +88,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="7dp"
-            android:text="Select role:"
-            android:textSize="18dp"
             android:fontFamily="@font/americantypewriter"
-            android:textColor="@color/white"
+            android:text="Select role:"
+            android:textColor="@color/myrtle_green"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,9 +109,6 @@
         android:layout_height="wrap_content"
         android:onClick="submit"
         android:text="Submit"
-        android:fontFamily="@font/americantypewriter"
-        android:textColor="@color/lavender_blue"
-        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
