@@ -26,8 +26,7 @@ The app can be run in 2 different ways:
 Classes are organized in the java folder of the app project. These classes are then organized by android activities and include everything that activity needs. For example, all classes related to logging in are found in one folder. Images, fonts, and layouts are found in the res folder. The AndroidManifest is found in the manifest folder.
 
 ~~~
-.  
-|-- class_structure.txt
+
 `-- javabucksim
     |-- MainActivity.java
     |-- StatisticsReport.java
