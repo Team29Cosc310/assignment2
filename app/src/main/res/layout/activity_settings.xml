@@ -8,6 +8,20 @@
     tools:context=".settings.settingsActivity">
 
 
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="-2sp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/americantypewriter"
+        android:text="@string/back"
+        android:textStyle="bold"
+        android:textColor="@color/myrtle_green"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="272dp"
@@ -55,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805">
+        app:layout_constraintVertical_bias="0.55">
 
 
         <Button

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class settingsActivity extends AppCompatActivity {
     private String role;
     FirebaseFirestore db;
     FirebaseAuth mAuth;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class settingsActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
+
+        back = findViewById(R.id.backButton);
 
 
         Intent intent = getIntent();
@@ -43,6 +47,13 @@ public class settingsActivity extends AppCompatActivity {
             showAdminSettings();
         }
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back = new Intent(settingsActivity.this, MainActivity.class);
+                startActivity(back);
+            }
+        });
 
     }
 
