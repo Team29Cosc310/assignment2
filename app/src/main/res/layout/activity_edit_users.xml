@@ -44,14 +44,12 @@
 
     <Button
         android:id="@+id/editUsr_submit_button"
-        android:layout_width="159dp"
-        android:layout_height="53dp"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="@color/rhythm"
         android:onClick="getAllUsers"
         android:text="Get All Users"
-        android:background="@drawable/round_btn"
-        android:textColor="@color/lavender_blue"
-        android:fontFamily="@font/americantypewriter"
-        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
