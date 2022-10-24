@@ -14,6 +14,8 @@
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.6245471014492754" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.6458333333333334" />
         <entry key="app/src/main/res/layout/activity_orderconf.xml" value="0.6245471014492754" />
+        <entry key="app/src/main/res/layout/activity_report.xml" value="0.1160081053698075" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.19746376811594202" />
         <entry key="app/src/main/res/layout/order_view_row.xml" value="0.7333333333333334" />
         <entry key="app/src/main/res/layout/user_item.xml" value="0.8052536231884058" />
       </map>

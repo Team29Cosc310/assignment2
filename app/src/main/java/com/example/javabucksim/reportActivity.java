@@ -24,11 +24,14 @@ public class reportActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     StatisticsReport statReport = new StatisticsReport();
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+        back = findViewById(R.id.backButton);
 
         Intent intent = getIntent();
 
@@ -39,6 +42,14 @@ public class reportActivity extends AppCompatActivity {
         // Button will be re-enabled in next assignment
         Button saveReportButton = (Button) findViewById(R.id.buttonSaveReport);
         saveReportButton.setVisibility(View.GONE);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back = new Intent(reportActivity.this, MainActivity.class);
+                startActivity(back);
+            }
+        });
     }
 
     // Read from Firebase, get statistics values, and update the StatisticsReport Object
