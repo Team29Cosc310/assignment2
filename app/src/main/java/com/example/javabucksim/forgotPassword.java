@@ -24,7 +24,6 @@ public class forgotPassword extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 

@@ -36,8 +36,6 @@ public class createAccount extends AppCompatActivity {
 
         setupSpinner();
 
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setupSpinner(){
