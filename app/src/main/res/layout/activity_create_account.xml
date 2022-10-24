@@ -7,6 +7,7 @@
     android:background="#C6D4FF"
     tools:context=".createAccount">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -17,6 +18,7 @@
         android:textColor="@color/bottle_green"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:fontFamily="@font/americantypewriter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -41,6 +43,8 @@
             android:layout_height="50dp"
             android:ems="10"
             android:hint="Email"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/white"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -52,6 +56,8 @@
             android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="Password"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/white"
             android:inputType="textPassword" />
 
         <EditText
@@ -61,6 +67,8 @@
             android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="First Name"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/white"
             android:inputType="textPersonName" />
 
         <EditText
@@ -70,6 +78,8 @@
             android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="Last Name"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/white"
             android:inputType="textPersonName" />
 
         <TextView
@@ -80,12 +90,15 @@
             android:layout_marginTop="7dp"
             android:text="Select role:"
             android:textSize="18dp"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/role_spinner"
             android:layout_width="match_parent"
+            android:fontFamily="@font/americantypewriter"
             android:layout_height="50dp" />
 
     </LinearLayout>
@@ -96,6 +109,9 @@
         android:layout_height="wrap_content"
         android:onClick="submit"
         android:text="Submit"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/lavender_blue"
+        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -39,11 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
     String chai;
     Bundle bundle = new Bundle();
+    Button items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        items = findViewById(R.id.items);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -67,8 +70,7 @@ public class MainActivity extends AppCompatActivity {
         setUpReports();
         setUpLogout();
         lowStackWarning();
-
-
+        setUpItemDetails();
 
     }
 
@@ -198,12 +200,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button settingsBut = findViewById(R.id.settingsButton);
         settingsBut.setText(role + " Settings");
-
-
-
-
-
     }
+
     public void placeOrder(View view)
     {
         Button order = findViewById(R.id.place_order);
@@ -231,6 +229,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setUpItemDetails(){
+        items.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Categories.class);
+                startActivity(intent);
+            }
+        });
+    }
      //
     void lowStackWarning() {
         String doc = "j9BQe3OtLP6XnUK66MWK";

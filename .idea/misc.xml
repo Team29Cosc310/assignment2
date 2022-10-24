@@ -7,14 +7,26 @@
         <entry key="..\:/UBC/COSC 310/Project/assignment2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/UBC/COSC 310/Project/assignment2/app/src/main/res/layout/activity_report.xml" value="0.33" />
         <entry key="..\:/UBC/COSC 310/Project/assignment2/app/src/main/res/layout/activity_settings.xml" value="0.2078804347826087" />
-        <entry key="app/src/main/res/layout/activity_autoord.xml" value="0.6245471014492754" />
+        <entry key="app/src/main/res/drawable/boxes.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/button.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/details_background.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/rounded_corner_view.xml" value="0.1235" />
+        <entry key="app/src/main/res/layout/activity_autoord.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_categories.xml" value="0.24010416666666667" />
-        <entry key="app/src/main/res/layout/activity_edit_user_accounts.xml" value="0.5020833333333333" />
-        <entry key="app/src/main/res/layout/activity_edit_users.xml" value="0.5020833333333333" />
+        <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/activity_delete_account.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/activity_edit_account.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/activity_edit_user_accounts.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_edit_users.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.6245471014492754" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.6458333333333334" />
+        <entry key="app/src/main/res/layout/activity_login2.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_orderconf.xml" value="0.6245471014492754" />
-        <entry key="app/src/main/res/layout/order_view_row.xml" value="0.7333333333333334" />
+        <entry key="app/src/main/res/layout/activity_other.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/activity_report.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/order_view_row.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/user_item.xml" value="0.23854166666666668" />
       </map>
     </option>
   </component>

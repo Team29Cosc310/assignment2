@@ -7,6 +7,7 @@
     android:background="#C6D4FF"
     tools:context=".settingsActivity">
 
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="272dp"
@@ -31,7 +32,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/createAccBut"
@@ -40,7 +43,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:onClick="editAccount"
-            android:text="Edit Account" />
+            android:text="Edit Account"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm" />
     </LinearLayout>
 
     <LinearLayout
@@ -55,14 +61,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.805">
 
+
         <Button
+
             android:id="@+id/editUsersBut"
             android:layout_width="170dp"
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="5dp"
             android:onClick="editUsers"
-            android:text="Edit Users" />
+            android:text="Edit Users"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm" />
 
         <Button
             android:id="@+id/editAccBut"
@@ -79,7 +90,10 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:onClick="deleteAccount"
-            android:text="Delete Account" />
+            android:text="Delete Account"
+            android:fontFamily="@font/americantypewriter"
+            android:textColor="@color/lavender_blue"
+            android:backgroundTint="@color/rhythm" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

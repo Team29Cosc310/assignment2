@@ -7,6 +7,7 @@
     android:background="#C6D4FF"
     tools:context=".editUsers">
 
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
@@ -16,6 +17,7 @@
         android:text="Edit User Info"
         android:textColor="@color/bottle_green"
         android:textSize="20dp"
+        android:fontFamily="@font/americantypewriter"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +33,9 @@
         android:onClick="submit"
         android:text="Submit"
         android:background="@drawable/round_btn"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/lavender_blue"
+        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -54,35 +59,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
-            android:text="First name" />
+            android:textColor="@color/white"
+            android:text="First name"
+            android:fontFamily="@font/americantypewriter" />
 
         <EditText
             android:id="@+id/et_editUsr_fn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:fontFamily="@font/americantypewriter" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
-            android:text="Last Name" />
+            android:textColor="@color/white"
+            android:text="Last Name"
+            android:fontFamily="@font/americantypewriter" />
 
         <EditText
             android:id="@+id/et_editUsr_ln"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:fontFamily="@font/americantypewriter" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
-            android:text="Email" />
+            android:textColor="@color/white"
+            android:text="Email"
+            android:fontFamily="@font/americantypewriter" />
 
         <EditText
             android:id="@+id/et_editUsr_email"
@@ -90,21 +103,25 @@
             android:layout_height="50dp"
             android:ems="10"
             android:enabled="false"
-            android:inputType="none" />
+            android:inputType="none"
+            android:fontFamily="@font/americantypewriter" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
-            android:text="Change password" />
+            android:textColor="@color/white"
+            android:text="Change password"
+            android:fontFamily="@font/americantypewriter" />
 
         <EditText
             android:id="@+id/et_editUsr_pw"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:fontFamily="@font/americantypewriter" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

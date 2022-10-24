@@ -7,6 +7,7 @@
     android:background="#C6D4FF"
     tools:context=".loginActivity">
 
+
     <EditText
         android:id="@+id/editTextPW"
         android:layout_width="wrap_content"
@@ -14,6 +15,8 @@
         android:width="300dp"
         android:ems="10"
         android:hint="Password"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/white"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/editTextEmail"
@@ -27,6 +30,8 @@
         android:width="300dp"
         android:ems="10"
         android:hint="Email"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/white"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +48,8 @@
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:text="Forgot password?"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +63,9 @@
         android:layout_height="55dp"
         android:background="@drawable/round_btn"
         android:text="Login"
+        android:fontFamily="@font/americantypewriter"
+        android:textColor="@color/lavender_blue"
+        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/editTextPW"
         app:layout_constraintTop_toTopOf="parent"
