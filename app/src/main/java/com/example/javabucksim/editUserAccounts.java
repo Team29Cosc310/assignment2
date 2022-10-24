@@ -43,7 +43,6 @@ public class editUserAccounts extends AppCompatActivity {
         getData();
         populateFields();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void getData(){

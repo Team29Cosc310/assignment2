@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/myrtle_green">
+
+    android:background="#C6D4FF"
+    android:backgroundTint="#C6D4FF"
+    android:foregroundTint="#C6D4FF">
+
     <Button
         android:id="@+id/backButton"
         android:layout_width="75dp"
@@ -21,10 +25,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orderView"
         android:layout_width="399dp"
         android:layout_height="608dp"
+        android:background="#C6D4FF"
+        android:backgroundTint="#C6D4FF"
+        android:foregroundTint="#C6D4FF"
+        android:theme="@style/Theme.JavabucksIM"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,10 +44,10 @@
         android:id="@+id/conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/americantypewriter"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="@color/rhythm"
         android:text="Confirm"
         android:textColor="@color/lavender_blue"
-        android:backgroundTint="@color/rhythm"
         android:onClick="conf"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -51,7 +51,6 @@ public class editUsers extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setOnClickListener() {

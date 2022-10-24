@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editAccount"
-    android:background="@color/myrtle_green">
+
+    android:background="#C6D4FF"
+    tools:context=".editAccount">
+
+
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner_view"
+        android:background="@drawable/round_btn"
         android:padding="5dp"
         android:text="Edit Personal Info"
-        android:textColor="@color/white"
+        android:textColor="@color/bottle_green"
         android:textSize="20dp"
         android:fontFamily="@font/americantypewriter"
         android:textStyle="bold"
@@ -31,9 +34,6 @@
         android:layout_height="wrap_content"
         android:onClick="submit"
         android:text="Submit"
-        android:fontFamily="@font/americantypewriter"
-        android:textColor="@color/lavender_blue"
-        android:backgroundTint="@color/rhythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -56,10 +56,10 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/americantypewriter"
             android:paddingLeft="5dp"
-            android:textColor="@color/white"
             android:text="First name"
-            android:fontFamily="@font/americantypewriter" />
+            android:textColor="@color/myrtle_green" />
 
         <EditText
             android:id="@+id/et_editAcc_fn"
@@ -73,10 +73,10 @@
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/americantypewriter"
             android:paddingLeft="5dp"
-            android:textColor="@color/white"
             android:text="Last Name"
-            android:fontFamily="@font/americantypewriter" />
+            android:textColor="@color/myrtle_green" />
 
         <EditText
             android:id="@+id/et_editAcc_ln"
@@ -90,10 +90,10 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/americantypewriter"
             android:paddingLeft="5dp"
-            android:textColor="@color/white"
             android:text="Email"
-            android:fontFamily="@font/americantypewriter"/>
+            android:textColor="@color/myrtle_green" />
 
         <EditText
             android:id="@+id/et_editAcc_email"
@@ -108,10 +108,10 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/americantypewriter"
             android:paddingLeft="5dp"
-            android:textColor="@color/white"
             android:text="Change password"
-            android:fontFamily="@font/americantypewriter" />
+            android:textColor="@color/myrtle_green" />
 
         <EditText
             android:id="@+id/et_editAcc_pw"
