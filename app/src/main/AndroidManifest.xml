@@ -112,7 +112,278 @@
         <activity
             android:name=".Categories"
             android:exported="false"
-            android:label="Categories">
+            android:label="Categories"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotCof"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Categories">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+        </activity>
+        <activity
+            android:name=".HotCof1"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotCof2"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotCof3"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotCof4"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotCof5"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdCof"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Categories">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdCof1"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdCof2"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdCof3"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdCof4"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdCof5"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdCof">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotD"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Categories">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotD1"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotD2"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotD3"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotD4"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HotD5"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".HotD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdD"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Categories">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdD1"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdD2"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdD3"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdD4"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ColdD5"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".ColdD">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Other"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Categories">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Other1"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Other">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Other2"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Other">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Other3"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Other">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Other4"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Other">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Other5"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".Other">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -1,10 +1,14 @@
 package com.example.javabucksim;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentChange;
@@ -63,7 +67,19 @@ public class autoOrder extends AppCompatActivity {
 
             orderItems.add(new orderTile(itemNames[i], itemquantities[i]));
         }
-
-
     }
+    public void conf(View view)
+    {
+        Button order = findViewById(R.id.conf);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(this,"Order Placed", Toast.LENGTH_LONG).show();
+    }
+
+    public void back(View view) {
+        Button back = findViewById(R.id.backButton);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
