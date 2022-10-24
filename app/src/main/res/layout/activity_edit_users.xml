@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
 
     android:background="#C6D4FF"
-    tools:context=".editUsers">
+    tools:context=".settings.editUsers">
 
 
     <!--Recycler view for displaying
