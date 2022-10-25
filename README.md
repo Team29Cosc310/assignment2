@@ -18,6 +18,7 @@ The app can be run in 2 different ways:
 
 
 ### Please note: As this app is designed to be used internally, there is no option to create a personal account. Accounts must be created by and given permission by admins.
+### *App tested on Google Pixel 3a, may not look correct on all mobile devices or tablets.*
 
 ---
 
