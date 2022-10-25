@@ -45,7 +45,7 @@ public class autoOrder extends AppCompatActivity {
 
 
         //grab names and quant from db?
-        String[] itemNames ={"chai"};
+        String[] itemNames ={"chai"}; //
         String[] itemquantities = {"300","200","100"};// when an item is low calculate the diference between max and current for all items and if it is less than 25% order the approprate ammount of that item
         //create order tiles
         orderTile tile ;
