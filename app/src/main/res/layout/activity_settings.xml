@@ -101,16 +101,6 @@
             android:backgroundTint="@color/rhythm"
             android:fontFamily="@font/americantypewriter" />
 
-        <Button
-            android:id="@+id/delAccBut"
-            android:layout_width="170dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:onClick="deleteAccount"
-            android:text="Delete Account"
-            android:textColor="@color/lavender_blue"
-            android:backgroundTint="@color/rhythm"
-            android:fontFamily="@font/americantypewriter" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

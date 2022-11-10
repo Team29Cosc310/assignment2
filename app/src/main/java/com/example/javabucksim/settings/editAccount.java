@@ -1,8 +1,10 @@
 package com.example.javabucksim.settings;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -62,6 +64,45 @@ public class editAccount extends AppCompatActivity {
     public boolean onSupportNavigateUp(){
         finish();
         return true;
+    }
+
+    public void alert(View view) {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(editAccount.this);
+
+        builder.setCancelable(true);
+        builder.setTitle("Delete Account warning");
+        builder.setMessage("Are you sure you want to delete your account and all data? ");
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setPositiveButton("Delete!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                deleteMyAccount();
+            }
+        });
+        builder.show();
+    }
+
+    private void deleteMyAccount() {
+
+        String uid = mAuth.getUid();
+
+        db.collection("users").document(uid)
+                .delete();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        user.delete();
+
+        finish();
+
     }
 
     // submit form, go back to settings activity
