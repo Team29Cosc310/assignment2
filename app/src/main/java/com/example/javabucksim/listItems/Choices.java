@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.javabucksim.listItems.Item;
 import com.example.javabucksim.R;
 
 public class Choices extends AppCompatActivity {
@@ -21,6 +23,7 @@ public class Choices extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choices);
 
+        back = findViewById(R.id.backButton);
         category = findViewById(R.id.category);
         choice1 = findViewById(R.id.choice1);
         choice2 = findViewById(R.id.choice2);
@@ -28,20 +31,24 @@ public class Choices extends AppCompatActivity {
         choice4 = findViewById(R.id.choice4);
         choice5 = findViewById(R.id.choice5);
 
-//        Bundle bundle = getIntent().getExtras();
-//        cat = bundle.getString("category");
-//        c1 = bundle.getString("choice1");
-//        c2 = bundle.getString("choice2");
-//        c3 = bundle.getString("choice3");
-//        c4 = bundle.getString("choice4");
-//        c5 = bundle.getString("choice5");
-//
-//        category.setText(cat);
-//        choice1.setText(c1);
-//        choice2.setText(c2);
-//        choice3.setText(c3);
-//        choice4.setText(c4);
-//        choice5.setText(c5);
+        Bundle bundle = getIntent().getExtras();
+        cat = bundle.getString("category");
+        c1 = bundle.getString("choice1");
+        c2 = bundle.getString("choice2");
+        c3 = bundle.getString("choice3");
+        c4 = bundle.getString("choice4");
+        c5 = bundle.getString("choice5");
+
+        if(bundle != null) {
+            category.setText(cat);
+            choice1.setText(c1);
+            choice2.setText(c2);
+            choice3.setText(c3);
+            choice4.setText(c4);
+            choice5.setText(c5);
+        } else {
+            Toast.makeText(this, "Null", Toast.LENGTH_SHORT).show();
+        }
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

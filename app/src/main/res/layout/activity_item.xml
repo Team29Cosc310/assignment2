@@ -31,7 +31,6 @@
             android:gravity="center_horizontal"
             android:layout_marginTop="2.5sp"/>
     </LinearLayout>
-
     <Button
         android:id="@+id/backButton"
         android:layout_width="75dp"
@@ -53,10 +52,10 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:fontFamily="@font/americantypewriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:layout_marginTop="50sp"
-        android:layout_marginStart="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
@@ -65,10 +64,10 @@
         android:textSize="15sp"
         android:textColor="@color/white"
         android:fontFamily="@font/americantypewriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:layout_marginTop="100sp"
-        android:layout_marginStart="150sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
@@ -76,10 +75,10 @@
         android:text="@string/smol_12_oz_2_75"
         android:textColor="@color/white"
         android:fontFamily="@font/americantypewriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:layout_marginTop="125sp"
-        android:layout_marginStart="130sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
@@ -87,9 +86,9 @@
         android:text="@string/mid_16_oz_3_50"
         android:textColor="@color/white"
         android:fontFamily="@font/americantypewriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:layout_marginTop="145sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -98,23 +97,21 @@
         android:text="@string/chonk_20_oz_4_25"
         android:textColor="@color/white"
         android:fontFamily="@font/americantypewriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="125sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:layout_marginTop="165sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <ImageView
         android:id="@+id/dark_roast_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350sp"
+        android:layout_height="250sp"
         android:src="@drawable/istockphoto_1143290013_612x612"
         android:adjustViewBounds="true"
         android:contentDescription="@string/dark_roast"
-        android:maxHeight="300sp"
-        android:maxWidth="300sp"
-        android:layout_marginStart="60sp"
-        android:layout_marginTop="190sp"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="185sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <LinearLayout
@@ -122,17 +119,9 @@
         android:layout_height="230sp"
         android:background="@drawable/details_background"
         android:layout_marginTop="440sp"
-        android:layout_marginStart="60sp"
+        android:layout_marginStart="50sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <ImageView
-            android:id="@+id/item_details_background"
-            android:src="@drawable/details_background"
-            android:contentDescription="@string/dark_roast"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
         <TextView
             android:text="@string/smol"
             android:textColor="@color/white"
@@ -140,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
-            android:layout_marginStart="130sp"
+            android:layout_marginStart="135sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <TextView
@@ -150,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
-            android:layout_marginStart="20sp"
+            android:layout_marginStart="17sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <TextView
@@ -160,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
-            android:layout_marginStart="20sp"
+            android:layout_marginStart="17sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <TextView
@@ -171,7 +160,7 @@
             android:fontFamily="@font/americantypewriter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-255sp"
+            android:layout_marginStart="-260sp"
             android:layout_marginTop="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -243,7 +232,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="195sp"
+        android:layout_marginStart="190sp"
         android:layout_marginTop="470sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -265,7 +254,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="195sp"
+        android:layout_marginStart="190sp"
         android:layout_marginTop="530sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -276,7 +265,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="195sp"
+        android:layout_marginStart="190sp"
         android:layout_marginTop="560sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -287,7 +276,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="195sp"
+        android:layout_marginStart="190sp"
         android:layout_marginTop="590sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -298,7 +287,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="195sp"
+        android:layout_marginStart="190sp"
         android:layout_marginTop="620sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -309,7 +298,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="242sp"
+        android:layout_marginStart="240sp"
         android:layout_marginTop="470sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -331,7 +320,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="245sp"
+        android:layout_marginStart="240sp"
         android:layout_marginTop="530sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -342,7 +331,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="245sp"
+        android:layout_marginStart="240sp"
         android:layout_marginTop="560sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -353,7 +342,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="245sp"
+        android:layout_marginStart="240sp"
         android:layout_marginTop="590sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -364,7 +353,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="245sp"
+        android:layout_marginStart="240sp"
         android:layout_marginTop="620sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -375,7 +364,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300sp"
+        android:layout_marginStart="290sp"
         android:layout_marginTop="470sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -397,7 +386,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="295sp"
+        android:layout_marginStart="290sp"
         android:layout_marginTop="530sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -408,7 +397,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="295sp"
+        android:layout_marginStart="290sp"
         android:layout_marginTop="560sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -419,7 +408,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="295sp"
+        android:layout_marginStart="290sp"
         android:layout_marginTop="590sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -430,7 +419,7 @@
         android:fontFamily="@font/americantypewriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="295sp"
+        android:layout_marginStart="290sp"
         android:layout_marginTop="620sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
