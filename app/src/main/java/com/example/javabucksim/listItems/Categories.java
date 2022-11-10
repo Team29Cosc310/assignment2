@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.javabucksim.listItems.coldCoffee.ColdCof;
 import com.example.javabucksim.listItems.coldDrink.ColdD;
@@ -17,6 +18,7 @@ import com.example.javabucksim.listItems.hotCoffee.HotCof;
 import com.example.javabucksim.listItems.hotDrink.HotD;
 import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.listItems.otherDrinks.Other;
+import com.example.javabucksim.listItems.Choices;
 import com.example.javabucksim.R;
 import com.example.javabucksim.orders.autoOrder;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,9 +36,8 @@ public class Categories extends AppCompatActivity {
     String[] productName = {"chai", "blondeRoast", "capp", "coffee", "coldbrew", "cups", "darkRoast", "flavour", "juice", "latte", "lids",
             "matcha", "mediumRoast", "milk", "sleeves", "stoppers", "sugar", "tea"};
 
-
-
     Button hotCof, coldCof, hotD, coldD, other, back, check;
+    String choice1, choice2, choice3, choice4, choice5, category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,40 +64,110 @@ public class Categories extends AppCompatActivity {
         hotCof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent hotCof_intent = new Intent(Categories.this, HotCof.class);
-                startActivity(hotCof_intent);
+                category = "Hot Coffees";
+                choice1 = "Pumpkin Spice Latte";
+                choice2 = "Dark Roast";
+                choice3 = "Medium Roast";
+                choice4 = "Blonde Roast";
+                choice5 = "Cappuccino";
+                Intent intent = new Intent(Categories.this, Choices.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("category", category);
+//                bundle.putString("choice1", choice1);
+//                bundle.putString("choice2", choice2);
+//                bundle.putString("choice3", choice3);
+//                bundle.putString("choice4", choice4);
+//                bundle.putString("choice5", choice5);
+//                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         coldCof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent coldCof_intent = new Intent(Categories.this, ColdCof.class);
-                startActivity(coldCof_intent);
+                category = "Cold Coffees";
+                choice1 = "Iced Pumpkin Spice Latte";
+                choice2 = "Iced Coffee";
+                choice3 = "Iced Latte";
+                choice4 = "Cold Brew";
+                choice5 = "Iced Cappuccino";
+                Intent intent = new Intent(Categories.this, Choices.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("category", category);
+//                bundle.putString("choice1", choice1);
+//                bundle.putString("choice2", choice2);
+//                bundle.putString("choice3", choice3);
+//                bundle.putString("choice4", choice4);
+//                bundle.putString("choice5", choice5);
+//                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         hotD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent hotD_intent = new Intent(Categories.this, HotD.class);
-                startActivity(hotD_intent);
+                category = "Hot Drinks";
+                choice1 = "Pumpkin Chai Latte";
+                choice2 = "Tea";
+                choice3 = "Hot Chocolate";
+                choice4 = "Chai Latte";
+                choice5 = "Matcha Latte";
+                Intent intent = new Intent(Categories.this, Choices.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("category", category);
+//                bundle.putString("choice1", choice1);
+//                bundle.putString("choice2", choice2);
+//                bundle.putString("choice3", choice3);
+//                bundle.putString("choice4", choice4);
+//                bundle.putString("choice5", choice5);
+//                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         coldD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent coldD_intent = new Intent(Categories.this, ColdD.class);
-                startActivity(coldD_intent);
+                category = "Cold Drinks";
+                choice1 = "Iced Pumpkin Chai Latte";
+                choice2 = "Iced Tea";
+                choice3 = "Iced Chai Latte";
+                choice4 = "Iced Matcha Latte";
+                choice5 = "Juice";
+                Intent intent = new Intent(Categories.this, Choices.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("category", category);
+//                bundle.putString("choice1", choice1);
+//                bundle.putString("choice2", choice2);
+//                bundle.putString("choice3", choice3);
+//                bundle.putString("choice4", choice4);
+//                bundle.putString("choice5", choice5);
+//                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent other_intent = new Intent(Categories.this, Other.class);
-                startActivity(other_intent);
+                category = "Other";
+                choice1 = "Iced Pumpkin Chai Latte";
+                choice2 = "Iced Tea";
+                choice3 = "Iced Chai Latte";
+                choice4 = "Iced Matcha Latte";
+                choice5 = "Juice";
+                Intent intent = new Intent(Categories.this, Choices.class);
+                Bundle bundle = new Bundle();
+//                bundle.putString("category", category);
+//                bundle.putString("choice1", choice1);
+//                bundle.putString("choice2", choice2);
+//                bundle.putString("choice3", choice3);
+//                bundle.putString("choice4", choice4);
+//                bundle.putString("choice5", choice5);
+//                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
