@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.chad.designtoast.DesignToast;
 import com.example.javabucksim.R;
 import com.example.javabucksim.login.forgotPassword;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -102,7 +103,7 @@ public class editUserAccounts extends AppCompatActivity {
                             }
 
                         } else {
-                            Toast.makeText(editUserAccounts.this, "Something went wrong getting data", Toast.LENGTH_SHORT).show();
+                            DesignToast.makeText(editUserAccounts.this, "Something went wrong getting data", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                         }
 
 
@@ -152,7 +153,7 @@ public class editUserAccounts extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(editUserAccounts.this, "Reset password email sent.", Toast.LENGTH_LONG).show();
+                        DesignToast.makeText(editUserAccounts.this, "Reset password email sent", DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
                         finish();
                     }
                 }
@@ -179,18 +180,19 @@ public class editUserAccounts extends AppCompatActivity {
             db.collection("users").document(userId).update(updateFields).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
-                    Toast.makeText(editUserAccounts.this, "Fields successfully updated", Toast.LENGTH_SHORT).show();
+                    DesignToast.makeText(editUserAccounts.this, "Fields successfully updated", DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(editUserAccounts.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    DesignToast.makeText(editUserAccounts.this, "Something went wrong", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                 }
             });
 
             finish();
         } else {
-            Toast.makeText(editUserAccounts.this, "No changes made", Toast.LENGTH_SHORT).show();
+            DesignToast designToast = DesignToast.makeText(this, "No changes made");
+            designToast.show();
             finish();
         }
 
