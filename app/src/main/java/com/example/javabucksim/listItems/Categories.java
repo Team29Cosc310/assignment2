@@ -4,23 +4,15 @@ package com.example.javabucksim.listItems;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.javabucksim.listItems.coldCoffee.ColdCof;
-import com.example.javabucksim.listItems.coldDrink.ColdD;
-import com.example.javabucksim.listItems.hotCoffee.HotCof;
-import com.example.javabucksim.listItems.hotDrink.HotD;
-import com.example.javabucksim.MainActivity;
-import com.example.javabucksim.listItems.otherDrinks.Other;
-import com.example.javabucksim.listItems.Choices;
 import com.example.javabucksim.R;
 import com.example.javabucksim.orders.autoOrder;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -151,11 +143,11 @@ public class Categories extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 category = "Other";
-                choice1 = "Iced Pumpkin Chai Latte";
-                choice2 = "Iced Tea";
-                choice3 = "Iced Chai Latte";
-                choice4 = "Iced Matcha Latte";
-                choice5 = "Juice";
+                choice1 = "Flavour Shots";
+                choice2 = "Espresso";
+                choice3 = "Milk";
+                choice4 = "Cream";
+                choice5 = "Sugar";
                 Intent intent = new Intent(Categories.this, Choices.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("category", category);

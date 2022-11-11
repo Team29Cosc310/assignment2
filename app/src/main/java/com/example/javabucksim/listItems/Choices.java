@@ -1,7 +1,6 @@
 package com.example.javabucksim.listItems;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,14 +8,21 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.javabucksim.listItems.Item;
 import com.example.javabucksim.R;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Choices extends AppCompatActivity {
 
     Button choice1, choice2, choice3, choice4, choice5, back;
     TextView category;
     String cat, c1, c2, c3, c4, c5;
+    String sCalories, sProtein, sFat, sCarbs, sFiber, sSugar;
+    String mCalories, mProtein, mFat, mCarbs, mFiber, mSugar;
+    String cCalories, cProtein, cFat, cCarbs, cFiber, cSugar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,8 @@ public class Choices extends AppCompatActivity {
             Toast.makeText(this, "Null", Toast.LENGTH_SHORT).show();
         }
 
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,11 +69,14 @@ public class Choices extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String productName = c1;
-                Intent intent = new Intent(Choices.this, Item.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("productName", productName);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                if(productName.equals("Pumpkin Spice Latte")) {
+
+                    Intent intent = new Intent(Choices.this, Item.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("productName", productName);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
             }
         });
 
