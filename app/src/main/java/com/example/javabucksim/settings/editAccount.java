@@ -1,15 +1,20 @@
 package com.example.javabucksim.settings;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.chad.designtoast.DesignToast;
+import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.R;
+import com.example.javabucksim.login.loginActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -64,6 +69,49 @@ public class editAccount extends AppCompatActivity {
         return true;
     }
 
+    public void alert(View view) {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(editAccount.this);
+
+        builder.setCancelable(true);
+        builder.setTitle("Delete Account warning");
+        builder.setMessage("Are you sure you want to delete your account and all data? ");
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setPositiveButton("Delete!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                deleteMyAccount();
+            }
+        });
+        builder.show();
+    }
+
+    private void deleteMyAccount() {
+
+        String uid = mAuth.getUid();
+
+        db.collection("users").document(uid)
+                .delete();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        user.delete();
+
+        DesignToast.makeText(this, "Account successfully deleted", DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
+
+        startActivity(new Intent(editAccount.this, loginActivity.class));
+
+        finish();
+
+    }
+
     // submit form, go back to settings activity
     public void submit(View view){
 
@@ -80,7 +128,7 @@ public class editAccount extends AppCompatActivity {
 
 
         if (newPW.length() < 6){
-            Toast.makeText(editAccount.this,"Password must be at least 6 characters",Toast.LENGTH_SHORT).show();
+            DesignToast.makeText(this, "Password must be at least 6 characters", DesignToast.LENGTH_SHORT, DesignToast.TYPE_WARNING).show();
             return;
         }
 
@@ -106,18 +154,19 @@ public class editAccount extends AppCompatActivity {
             db.collection("users").document(userId).update(updateFields).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
-                    Toast.makeText(editAccount.this, "Fields successfully updated", Toast.LENGTH_SHORT).show();
+                    DesignToast.makeText(editAccount.this, "Fields successfully updated", DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(editAccount.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    DesignToast.makeText(editAccount.this, "Something went wrong", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                 }
             });
 
             finish();
         } else {
-            Toast.makeText(editAccount.this, "No changes made", Toast.LENGTH_SHORT).show();
+            DesignToast designToast = DesignToast.makeText(this, "No changes made");
+            designToast.show();
             finish();
         }
 

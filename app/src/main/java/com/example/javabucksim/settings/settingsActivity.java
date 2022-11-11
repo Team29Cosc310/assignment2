@@ -1,8 +1,10 @@
 package com.example.javabucksim.settings;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.R;
+import com.example.javabucksim.listItems.Categories;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -47,6 +50,7 @@ public class settingsActivity extends AppCompatActivity {
             showCurUserInfo();
             showAdminSettings();
         }
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,11 +165,6 @@ public class settingsActivity extends AppCompatActivity {
 
     }
 
-    public void deleteAccount(View view){
 
-        Intent intent = new Intent(settingsActivity.this, deleteAccount.class);
-        startActivity(intent);
-
-    }
 
 }
