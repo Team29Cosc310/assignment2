@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.chad.designtoast.DesignToast;
 import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.R;
 import com.google.android.gms.tasks.OnCanceledListener;
@@ -47,29 +48,30 @@ public class loginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 // sign in complete, go to main activity
+                                DesignToast.makeText(loginActivity.this, "Successfully logged in", DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
                                 startActivity(new Intent(loginActivity.this, MainActivity.class));
                             } else {
                                 // there was an error signing in
-                                Toast.makeText(loginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                DesignToast.makeText(loginActivity.this, "Something went wrong.", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                             }
                         }
                     })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(loginActivity.this, "Error: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT);
+                                    DesignToast.makeText(loginActivity.this, "Error: " + e.getLocalizedMessage(), DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                                 }
                             })
 
                             .addOnCanceledListener(new OnCanceledListener() {
                                 @Override
                                 public void onCanceled() {
-                                    Toast.makeText(loginActivity.this, "Canceled!", Toast.LENGTH_SHORT);
+                                    DesignToast.makeText(loginActivity.this, "Canceled!.", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                                 }
                             });
 
                 } else {
-                    Toast.makeText(loginActivity.this,"Please enter valid email and password.",Toast.LENGTH_LONG).show();
+                    DesignToast.makeText(loginActivity.this, "Please enter a valid email and password.", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                 }
 
             }

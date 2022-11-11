@@ -44,15 +44,6 @@
             android:name=".reportActivity"
             android:exported="false" />
         <activity
-            android:name=".settings.deleteAccount"
-            android:exported="false"
-            android:label="Delete Account"
-            android:parentActivityName=".settings.settingsActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".settings.editUsers"
             android:exported="false"
             android:label="Edit User Accounts"
