@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chad.designtoast.DesignToast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -51,7 +52,8 @@ public class reportActivity extends AppCompatActivity {
         saveReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Saving report", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Saving report", Toast.LENGTH_SHORT).show();
+                DesignToast.makeText(getApplicationContext(), "Saving report", DesignToast.LENGTH_SHORT, DesignToast.TYPE_INFO).show();
                 saveReport();
             }
         });
@@ -93,7 +95,8 @@ public class reportActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(reportActivity.this, "Error getting reports", Toast.LENGTH_LONG).show();
+                    DesignToast.makeText(reportActivity.this, "Error getting reports", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
+                    //Toast.makeText(reportActivity.this, "Error getting reports", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -168,10 +171,12 @@ public class reportActivity extends AppCompatActivity {
             String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString() + "/javabucksIM_report.pdf";
             document.save(path);
             document.close();
-            Toast.makeText(getApplicationContext(), "Saved to " + path, Toast.LENGTH_SHORT).show();
+            DesignToast.makeText(getApplicationContext(), "Saved to " + path, DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
+            //Toast.makeText(getApplicationContext(), "Saved to " + path, Toast.LENGTH_SHORT).show();
         }
         catch (IOException e) {
-            Toast.makeText(getApplicationContext(),"Error saving report",Toast.LENGTH_SHORT).show();
+            DesignToast.makeText(getApplicationContext(),"Error saving report",DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
+            //Toast.makeText(getApplicationContext(),"Error saving report",Toast.LENGTH_SHORT).show();
         }
     }
 }
