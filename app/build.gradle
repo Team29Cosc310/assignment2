@@ -34,6 +34,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.github.keithchad:design-toast:0.1.0'
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:30.4.1')
     // TODO: Add the dependencies for Firebase products you want to use

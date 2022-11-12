@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chad.designtoast.DesignToast;
 import com.example.javabucksim.listItems.Categories;
 import com.example.javabucksim.login.loginActivity;
 import com.example.javabucksim.orders.autoOrder;
@@ -153,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mFirebaseAuth.signOut();
+                DesignToast.makeText(MainActivity.this, "Successfully logged out", DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -181,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
                         // do stuff
                     }
                 } else {
+
                     Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_LONG).show();
                 }
 
