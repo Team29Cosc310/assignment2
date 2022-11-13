@@ -1,24 +1,34 @@
 package com.example.javabucksim;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class Categories extends AppCompatActivity {
+public class Categories extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mFirebaseAuth;
@@ -26,6 +36,17 @@ public class Categories extends AppCompatActivity {
     String[] productName = {"chai", "blondeRoast", "capp", "coffee", "coldbrew", "cups", "darkRoast", "flavour", "juice", "latte", "lids",
             "matcha", "mediumRoast", "milk", "sleeves", "stoppers", "sugar", "tea"};
 
+    //menu
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    //menuName & email
+    TextView menuName;
+    TextView menuEmail;
+    String menuFirstNameString;
+    String menuLastNameString;
+    String menuEmailString;
+    FirebaseUser user;
 
 
     Button hotCof, coldCof, hotD, coldD, other, back, check;
@@ -34,6 +55,24 @@ public class Categories extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
+
+        //menu
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+
+        //toolbar
+        setSupportActionBar(toolbar);
+        //nav_drawer
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        drawerLayout.setScrimColor(Color.parseColor("#32000000"));
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        //headerInfo
+        setMenuNameAndEmail();
+
 
         hotCof = findViewById(R.id.hotCof);
         coldCof = findViewById(R.id.coldCof);
@@ -173,5 +212,77 @@ public class Categories extends AppCompatActivity {
     {
         Intent intent = new Intent(this,autoOrder.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    //menuMethods
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                break;
+            case R.id.nav_place_order:
+                Intent intent = new Intent(Categories.this,autoOrder.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_veiw_items:
+                Intent intent1 = new Intent(Categories.this,Categories.class);
+                startActivity(intent1);
+                break;
+            case R.id.nav_profile:
+                Intent intent2 = new Intent(Categories.this,settingsActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.nav_logout:
+                mFirebaseAuth.signOut();
+                Intent intent3 = new Intent(Categories.this, MainActivity.class);
+                startActivity(intent3);
+                finish();
+                break;
+            case R.id.nav_veiw_report:
+                Intent intent4 = new Intent(Categories.this, reportActivity.class);
+                startActivity(intent4);
+                break;
+        }
+        return true;
+    }
+    void setMenuNameAndEmail() {
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+
+
+        DocumentReference documentReference = db.collection("users").document(uid);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                menuFirstNameString = value.getString("firstName");
+                menuLastNameString = value.getString("lastName");
+                menuEmailString = value.getString("email");
+                View headView = navigationView.getHeaderView(0);
+                TextView navUserName = (TextView) headView.findViewById(R.id.menuName);
+                TextView navUserEmail = (TextView) headView.findViewById(R.id.menuEmail);
+                navUserName.setText(menuFirstNameString + " " + menuLastNameString);
+                navUserEmail.setText(menuEmailString);
+            }
+        });
+
+
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
