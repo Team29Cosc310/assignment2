@@ -1,37 +1,35 @@
 package com.example.javabucksim;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+        import androidx.annotation.NonNull;
+        import androidx.annotation.Nullable;
+        import androidx.appcompat.app.ActionBarDrawerToggle;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.constraintlayout.widget.ConstraintLayout;
+        import androidx.core.view.GravityCompat;
+        import androidx.drawerlayout.widget.DrawerLayout;
+        import android.content.Intent;
+        import android.graphics.Color;
+        import android.os.Bundle;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.ProgressBar;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-//import android.widget.Toolbar;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.android.material.navigation.NavigationView;
+        import com.google.firebase.auth.FirebaseAuth;
+        import com.google.firebase.auth.FirebaseUser;
+        import com.google.firebase.firestore.DocumentReference;
+        import com.google.firebase.firestore.DocumentSnapshot;
+        import com.google.firebase.firestore.EventListener;
+        import com.google.firebase.firestore.FirebaseFirestore;
+        import com.google.firebase.firestore.FirebaseFirestoreException;
+        import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import androidx.appcompat.widget.Toolbar;
-
-import java.util.Map;
+        import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -50,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     String menuLastNameString;
     String menuEmailString;
     FirebaseUser user;
-
 
 
     Bundle bundle = new Bundle();
@@ -80,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-
         items = findViewById(R.id.items);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -101,10 +97,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         }
 
-//        setUpSettings();
-//        setUpReports();
-//        setUpLogout();
-//        setUpItemDetails();
+        setUpSettings();
+        setUpReports();
+        setUpLogout();
+        setUpItemDetails();
 
     }
 
@@ -318,27 +314,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     void setMenuNameAndEmail() {
         user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
+        if (user == null) {
+            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+        } else {
+            String uid = user.getUid();
 
 
-
-        DocumentReference documentReference = db.collection("users").document(uid);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                menuFirstNameString = value.getString("firstName");
-                menuLastNameString = value.getString("lastName");
-                menuEmailString = value.getString("email");
-                View headView = navigationView.getHeaderView(0);
-                TextView navUserName = (TextView) headView.findViewById(R.id.menuName);
-                TextView navUserEmail = (TextView) headView.findViewById(R.id.menuEmail);
-                navUserName.setText(menuFirstNameString + " " + menuLastNameString);
-                navUserEmail.setText(menuEmailString);
-            }
-        });
-
-
-
+            DocumentReference documentReference = db.collection("users").document(uid);
+            documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    menuFirstNameString = value.getString("firstName");
+                    menuLastNameString = value.getString("lastName");
+                    menuEmailString = value.getString("email");
+                    View headView = navigationView.getHeaderView(0);
+                    TextView navUserName = (TextView) headView.findViewById(R.id.menuName);
+                    TextView navUserEmail = (TextView) headView.findViewById(R.id.menuEmail);
+                    navUserName.setText(menuFirstNameString + " " + menuLastNameString);
+                    navUserEmail.setText(menuEmailString);
+                }
+            });
+        }
     }
-
 }

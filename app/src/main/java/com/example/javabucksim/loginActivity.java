@@ -45,7 +45,7 @@ public class loginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 // sign in complete, go to main activity
-                                startActivity(new Intent(loginActivity.this, Categories.class));
+                                startActivity(new Intent(loginActivity.this, MainActivity.class));
                             } else {
                                 // there was an error signing in
                                 Toast.makeText(loginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
