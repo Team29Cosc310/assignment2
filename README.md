@@ -108,4 +108,9 @@ Classes are organized in the java folder of the app project. These classes are t
    - Allows users to access all the pages with a navigation drawer.
 1. Item details data
    - The listitems package to only include the Categories, Choices, and Item classes. The classes creates better functionality and occupy less space, so more efficient. Added different titles for specific items, to make it easier to understand and use.
+   
+---
+## Testing
+
+Tests can be found here: https://github.com/azipis/Cosc310A3Testing/tree/main/app/src/androidTest/java/com/example/javabucksim
 
