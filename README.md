@@ -1,4 +1,4 @@
-# Cosc 310 Assignment 2
+# Cosc 310 Assignment 3
 
 The project is an Android app designed for Coffee shops to help manage their business. The app tracks inventory and sales information to help managers with their daily tasks and provide them with reports to make business decisions.
 
@@ -91,3 +91,13 @@ Classes are organized in the java folder of the app project. These classes are t
 
 
 ---
+
+## Features Added for Assignment 3
+
+1. Delete user and user data
+    - Allows users to wipe their data from the database if they are no longer using the app.
+1. Edit other users
+    - Allows admins to edit the data of other users, or sent a recovery email in case they are locked out of their accounts.
+1. Descriptive toast messages (Open Source Library)
+    - Toasts design to provide better feedback to users when using the app. Toasts are green when an action is successful, red when action failed or there was an error, yellow for a warning, and blue when giving information to the user.
+
