@@ -101,5 +101,5 @@ Classes are organized in the java folder of the app project. These classes are t
 1. Descriptive toast messages (Open Source Library)
     - Toasts design to provide better feedback to users when using the app. Toasts are green when an action is successful, red when action failed or there was an error, yellow for a warning, and blue when giving information to the user.
 1. Saving report as a PDF on the device
-    - Allows saving of sales and operations report as a PDF on the device's Documents folder. Added PdfBox-Android library (https://github.com/TomRoush/PdfBox-Android) to allow creating and saving PDF files in android.
+    - Allows saving of sales and operations report as a PDF on the device's Documents folder when the user clicks the Save Report button. Added PdfBox-Android library (https://github.com/TomRoush/PdfBox-Android) to allow creating and saving PDF files in android.
 
