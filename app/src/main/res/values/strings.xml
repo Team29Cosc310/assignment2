@@ -10,7 +10,9 @@
     <string name="u_dark_roast">
             <u>Dark Roast</u>
     </string>
-    <string name="price">Price Per Size</string>
+    <string name="price">
+        <u>Price Per Size</u>
+    </string>
     <string name="details_background">details_background</string>
     <string name="smol">Smol</string>
     <string name="mid">Mid</string>
@@ -63,5 +65,6 @@
     <string name="iced_latte1">Iced Latte</string>
     <string name="iced_coffee1">Iced Coffee</string>
     <string name="juice">Juice</string>
+    <string name="drink">drink</string>
 
 </resources>

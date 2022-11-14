@@ -20,9 +20,6 @@ public class Choices extends AppCompatActivity {
     Button choice1, choice2, choice3, choice4, choice5, back;
     TextView category;
     String cat, c1, c2, c3, c4, c5;
-    String sCalories, sProtein, sFat, sCarbs, sFiber, sSugar;
-    String mCalories, mProtein, mFat, mCarbs, mFiber, mSugar;
-    String cCalories, cProtein, cFat, cCarbs, cFiber, cSugar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,15 +66,13 @@ public class Choices extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String productName = c1;
-                if(productName.equals("Pumpkin Spice Latte")) {
-
-                    Intent intent = new Intent(Choices.this, Item.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("productName", productName);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(Choices.this, Item.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("productName", productName);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
+
         });
 
         choice2.setOnClickListener(new View.OnClickListener() {
