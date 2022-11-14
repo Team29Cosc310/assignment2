@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,18 +16,26 @@
         android:theme="@style/Theme.JavabucksIM"
         tools:targetApi="31">
         <activity
-            android:name=".editUserAccounts"
+            android:name=".listItems.Item"
+            android:exported="false"
+            android:parentActivityName=".listItems.Choices"/>
+        <activity
+            android:name=".listItems.Choices"
+            android:exported="false"
+            android:parentActivityName=".listItems.Categories"/>
+        <activity
+            android:name=".settings.editUserAccounts"
+            android:exported="false"
             android:label="Edit User Info"
-            android:parentActivityName=".editUsers"
-            android:exported="false">
+            android:parentActivityName=".settings.editUsers">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".forgotPassword"
+            android:name=".login.forgotPassword"
             android:exported="false"
-            android:parentActivityName=".loginActivity">
+            android:parentActivityName=".login.loginActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -35,45 +43,35 @@
         <activity
             android:name=".reportActivity"
             android:exported="false" />
-
         <activity
-            android:name=".deleteAccount"
-            android:exported="false"
-            android:label="Delete Account"
-            android:parentActivityName=".settingsActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".editUsers"
+            android:name=".settings.editUsers"
             android:exported="false"
             android:label="Edit User Accounts"
-            android:parentActivityName=".settingsActivity">
+            android:parentActivityName=".settings.settingsActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".createAccount"
+            android:name=".settings.createAccount"
             android:exported="false"
             android:label="Create Account"
-            android:parentActivityName=".settingsActivity">
+            android:parentActivityName=".settings.settingsActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".editAccount"
+            android:name=".settings.editAccount"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".settingsActivity">
+            android:parentActivityName=".settings.settingsActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".settingsActivity"
+            android:name=".settings.settingsActivity"
             android:exported="false"
             android:label="Settings"
             android:parentActivityName=".MainActivity">
@@ -82,7 +80,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".loginActivity"
+            android:name=".login.loginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -102,7 +100,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".autoOrder"
+            android:name=".orders.autoOrder"
             android:exported="false"
             android:label="Order Confirmation">
             <meta-data
@@ -110,7 +108,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Categories"
+            android:name=".listItems.Categories"
             android:exported="false"
             android:label="Categories"
             android:parentActivityName=".MainActivity">
@@ -119,271 +117,271 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotCof"
+            android:name=".listItems.hotCoffee.HotCof"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Categories">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-        </activity>
-        <activity
-            android:name=".HotCof1"
-            android:exported="false"
-            android:label="Edit Account"
-            android:parentActivityName=".HotCof">
+            android:parentActivityName=".listItems.Categories">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotCof2"
+            android:name=".listItems.hotCoffee.HotCof1"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotCof">
+            android:parentActivityName=".listItems.hotCoffee.HotCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotCof3"
+            android:name=".listItems.hotCoffee.HotCof2"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotCof">
+            android:parentActivityName=".listItems.hotCoffee.HotCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotCof4"
+            android:name=".listItems.hotCoffee.HotCof3"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotCof">
+            android:parentActivityName=".listItems.hotCoffee.HotCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotCof5"
+            android:name=".listItems.hotCoffee.HotCof4"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotCof">
+            android:parentActivityName=".listItems.hotCoffee.HotCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdCof"
+            android:name=".listItems.hotCoffee.HotCof5"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Categories">
+            android:parentActivityName=".listItems.hotCoffee.HotCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdCof1"
+            android:name=".listItems.coldCoffee.ColdCof"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdCof">
+            android:parentActivityName=".listItems.Categories">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdCof2"
+            android:name=".listItems.coldCoffee.ColdCof1"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdCof">
+            android:parentActivityName=".listItems.coldCoffee.ColdCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdCof3"
+            android:name=".listItems.coldCoffee.ColdCof2"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdCof">
+            android:parentActivityName=".listItems.coldCoffee.ColdCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdCof4"
+            android:name=".listItems.coldCoffee.ColdCof3"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdCof">
+            android:parentActivityName=".listItems.coldCoffee.ColdCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdCof5"
+            android:name=".listItems.coldCoffee.ColdCof4"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdCof">
+            android:parentActivityName=".listItems.coldCoffee.ColdCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotD"
+            android:name=".listItems.coldCoffee.ColdCof5"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Categories">
+            android:parentActivityName=".listItems.coldCoffee.ColdCof">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotD1"
+            android:name=".listItems.hotDrink.HotD"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotD">
+            android:parentActivityName=".listItems.Categories">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotD2"
+            android:name=".listItems.hotDrink.HotD1"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotD">
+            android:parentActivityName=".listItems.hotDrink.HotD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotD3"
+            android:name=".listItems.hotDrink.HotD2"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotD">
+            android:parentActivityName=".listItems.hotDrink.HotD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotD4"
+            android:name=".listItems.hotDrink.HotD3"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotD">
+            android:parentActivityName=".listItems.hotDrink.HotD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HotD5"
+            android:name=".listItems.hotDrink.HotD4"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".HotD">
+            android:parentActivityName=".listItems.hotDrink.HotD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdD"
+            android:name=".listItems.hotDrink.HotD5"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Categories">
+            android:parentActivityName=".listItems.hotDrink.HotD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdD1"
+            android:name=".listItems.coldDrink.ColdD"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdD">
+            android:parentActivityName=".listItems.Categories">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdD2"
+            android:name=".listItems.coldDrink.ColdD1"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdD">
+            android:parentActivityName=".listItems.coldDrink.ColdD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdD3"
+            android:name=".listItems.coldDrink.ColdD2"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdD">
+            android:parentActivityName=".listItems.coldDrink.ColdD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdD4"
+            android:name=".listItems.coldDrink.ColdD3"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdD">
+            android:parentActivityName=".listItems.coldDrink.ColdD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ColdD5"
+            android:name=".listItems.coldDrink.ColdD4"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".ColdD">
+            android:parentActivityName=".listItems.coldDrink.ColdD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Other"
+            android:name=".listItems.coldDrink.ColdD5"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Categories">
+            android:parentActivityName=".listItems.coldDrink.ColdD">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Other1"
+            android:name=".listItems.otherDrinks.Other"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Other">
+            android:parentActivityName=".listItems.Categories">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Other2"
+            android:name=".listItems.otherDrinks.Other1"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Other">
+            android:parentActivityName=".listItems.otherDrinks.Other">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Other3"
+            android:name=".listItems.otherDrinks.Other2"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Other">
+            android:parentActivityName=".listItems.otherDrinks.Other">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Other4"
+            android:name=".listItems.otherDrinks.Other3"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Other">
+            android:parentActivityName=".listItems.otherDrinks.Other">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Other5"
+            android:name=".listItems.otherDrinks.Other4"
             android:exported="false"
             android:label="Edit Account"
-            android:parentActivityName=".Other">
+            android:parentActivityName=".listItems.otherDrinks.Other">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".listItems.otherDrinks.Other5"
+            android:exported="false"
+            android:label="Edit Account"
+            android:parentActivityName=".listItems.otherDrinks.Other">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

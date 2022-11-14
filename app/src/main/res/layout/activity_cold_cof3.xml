@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ColdCof3"
+    tools:context=".listItems.coldCoffee.ColdCof3"
     android:background="@color/bottle_green">
     <LinearLayout
         android:layout_width="match_parent"

@@ -5,18 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chad.designtoast.DesignToast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.tom_roush.pdfbox.android.PDFBoxResourceLoader;
+import com.tom_roush.pdfbox.pdmodel.PDDocument;
+import com.tom_roush.pdfbox.pdmodel.PDPage;
+import com.tom_roush.pdfbox.pdmodel.PDPageContentStream;
+import com.tom_roush.pdfbox.pdmodel.font.PDFont;
+import com.tom_roush.pdfbox.pdmodel.font.PDType1Font;
 
+import java.io.IOException;
 import java.util.Map;
 
 
@@ -24,11 +33,14 @@ public class reportActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     StatisticsReport statReport = new StatisticsReport();
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+        back = findViewById(R.id.backButton);
 
         Intent intent = getIntent();
 
@@ -36,9 +48,22 @@ public class reportActivity extends AppCompatActivity {
 
         getReportFromDB();
 
-        // Button will be re-enabled in next assignment
         Button saveReportButton = (Button) findViewById(R.id.buttonSaveReport);
-        saveReportButton.setVisibility(View.GONE);
+        saveReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(getApplicationContext(), "Saving report", Toast.LENGTH_SHORT).show();
+                DesignToast.makeText(getApplicationContext(), "Saving report", DesignToast.LENGTH_SHORT, DesignToast.TYPE_INFO).show();
+                saveReport();
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     // Read from Firebase, get statistics values, and update the StatisticsReport Object
@@ -70,7 +95,8 @@ public class reportActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(reportActivity.this, "Error getting reports", Toast.LENGTH_LONG).show();
+                    DesignToast.makeText(reportActivity.this, "Error getting reports", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
+                    //Toast.makeText(reportActivity.this, "Error getting reports", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -99,5 +125,58 @@ public class reportActivity extends AppCompatActivity {
         employeeWorkHours.setText("Employee work hours: " + statReport.employeeWorkHours);
         totalEmployeeCosts.setText("Total employee costs: " + statReport.totalEmployeeCosts);
 
+    }
+
+    private void saveReport() {
+        PDFBoxResourceLoader.init(getApplicationContext());
+        PDDocument document = new PDDocument();
+        PDPage page = new PDPage();
+        document.addPage(page);
+
+        PDFont font = PDType1Font.HELVETICA;
+        PDPageContentStream contentStream;
+
+        try{
+            contentStream = new PDPageContentStream(document, page);
+            contentStream.beginText();
+
+            contentStream.setLeading(36.0f);
+            contentStream.setFont(font, 24);
+            contentStream.newLineAtOffset(100, 700);
+            contentStream.showText("javabucksIM Sales and Operations Report");
+            contentStream.newLine();
+            contentStream.setNonStrokingColor(0, 106, 78);
+            contentStream.setFont(font, 24);
+            contentStream.showText("Number of drinks sold: " + statReport.numberOfDrinksSold);
+            contentStream.newLine();
+            contentStream.showText("Rate of orders per hour: " + statReport.rateOfOrdersPerHour + "/hr");
+            contentStream.newLine();
+            contentStream.showText("Total sales revenue: $" + statReport.totalSalesRevenue);
+            contentStream.newLine();
+            contentStream.showText("Net Profit: $" + statReport.netProfit);
+            contentStream.newLine();
+            contentStream.showText("Number of customers: " + statReport.numberOfCustomers);
+            contentStream.newLine();
+            contentStream.showText("Number of employees: " + statReport.numberOfEmployees);
+            contentStream.newLine();
+            contentStream.showText("Employee wage per hour: " + statReport.employeeWagePerHour + "/hr");
+            contentStream.newLine();
+            contentStream.showText("Employee work hours: " + statReport.employeeWorkHours + " hours");
+            contentStream.newLine();
+            contentStream.showText("Total employee costs: $" + statReport.totalEmployeeCosts);
+            contentStream.endText();
+
+            contentStream.close();
+
+            String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString() + "/javabucksIM_report.pdf";
+            document.save(path);
+            document.close();
+            DesignToast.makeText(getApplicationContext(), "Saved to " + path, DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
+            //Toast.makeText(getApplicationContext(), "Saved to " + path, Toast.LENGTH_SHORT).show();
+        }
+        catch (IOException e) {
+            DesignToast.makeText(getApplicationContext(),"Error saving report",DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
+            //Toast.makeText(getApplicationContext(),"Error saving report",Toast.LENGTH_SHORT).show();
+        }
     }
 }

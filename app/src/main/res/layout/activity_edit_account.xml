@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="#C6D4FF"
-    tools:context=".editAccount">
+    tools:context=".settings.editAccount">
 
 
 
@@ -42,6 +42,7 @@
         app:layout_constraintVertical_bias="0.879" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="377dp"
         android:layout_height="335dp"
         android:orientation="vertical"
@@ -66,8 +67,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:fontFamily="@font/americantypewriter" />
+            android:fontFamily="@font/americantypewriter"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView7"
@@ -83,8 +84,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:fontFamily="@font/americantypewriter" />
+            android:fontFamily="@font/americantypewriter"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView9"
@@ -101,8 +102,8 @@
             android:layout_height="50dp"
             android:ems="10"
             android:enabled="false"
-            android:inputType="none"
-            android:fontFamily="@font/americantypewriter" />
+            android:fontFamily="@font/americantypewriter"
+            android:inputType="none" />
 
         <TextView
             android:id="@+id/textView8"
@@ -118,8 +119,22 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPassword"
-            android:fontFamily="@font/americantypewriter" />
+            android:fontFamily="@font/americantypewriter"
+            android:inputType="textPassword" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/delAcc_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CC0202"
+        android:onClick="alert"
+        android:text="Delete My Account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
