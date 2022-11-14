@@ -33,41 +33,8 @@ Classes are organized in the java folder of the app project. These classes are t
     |-- StatisticsReport.java
     |-- listItems
     |   |-- Categories.java
-    |   |-- coldCoffee
-    |   |   |-- ColdCof.java
-    |   |   |-- ColdCof1.java
-    |   |   |-- ColdCof2.java
-    |   |   |-- ColdCof3.java
-    |   |   |-- ColdCof4.java
-    |   |   `-- ColdCof5.java
-    |   |-- coldDrink
-    |   |   |-- ColdD.java
-    |   |   |-- ColdD1.java
-    |   |   |-- ColdD2.java
-    |   |   |-- ColdD3.java
-    |   |   |-- ColdD4.java
-    |   |   `-- ColdD5.java
-    |   |-- hotCoffee
-    |   |   |-- HotCof.java
-    |   |   |-- HotCof1.java
-    |   |   |-- HotCof2.java
-    |   |   |-- HotCof3.java
-    |   |   |-- HotCof4.java
-    |   |   `-- HotCof5.java
-    |   |-- hotDrink
-    |   |   |-- HotD.java
-    |   |   |-- HotD1.java
-    |   |   |-- HotD2.java
-    |   |   |-- HotD3.java
-    |   |   |-- HotD4.java
-    |   |   `-- HotD5.java
-    |   `-- otherDrinks
-    |       |-- Other.java
-    |       |-- Other1.java
-    |       |-- Other2.java
-    |       |-- Other3.java
-    |       |-- Other4.java
-    |       `-- Other5.java
+    |   |-- Choices.java
+    |   `-- Item.java
     |-- login
     |   |-- forgotPassword.java
     |   `-- loginActivity.java
@@ -80,13 +47,12 @@ Classes are organized in the java folder of the app project. These classes are t
         |-- User.java
         |-- UserRVAdapter.java
         |-- createAccount.java
-        |-- deleteAccount.java
         |-- editAccount.java
         |-- editUserAccounts.java
         |-- editUsers.java
         `-- settingsActivity.java
 
-10 directories, 48 files
+5 directories, 19 files
 ~~~
 
 
