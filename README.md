@@ -106,4 +106,6 @@ Classes are organized in the java folder of the app project. These classes are t
    - the auto order functionality now updates the database when orders are placed. Also low stock warning integration so that users won't accidentally     double order. 
 1. Navigation drawer that makes the app more integrated.
    - Allows users to access all the pages with a navigation drawer.
+1. Item details data
+   - The listitems package to only include the Categories, Choices, and Item classes. The classes creates better functionality and occupy less space, so more efficient. Added different titles for specific items, to make it easier to understand and use.
 
