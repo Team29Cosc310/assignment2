@@ -67,4 +67,6 @@
     <string name="juice">Juice</string>
     <string name="drink">drink</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
