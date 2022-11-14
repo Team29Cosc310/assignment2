@@ -3,13 +3,11 @@ package com.example.javabucksim;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -63,8 +61,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         //menu
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navView);
@@ -110,8 +106,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        setUpLogout();
 //        setUpItemDetails();
 
-        //logout
-        logoutAlert();
     }
 
     // check if user is logged in
@@ -192,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // logout user and end activity
-    public void setUpLogout(){
+    private void setUpLogout(){
 
         Button logoutBut = findViewById(R.id.logoutButton);
         logoutBut.setOnClickListener(new View.OnClickListener() {
@@ -301,10 +295,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(MainActivity.this,autoOrder.class);
                 startActivity(intent);
                 break;
-//            case R.id.nav_veiw_items:
-//                Intent intent1 = new Intent(MainActivity.this,Categories.class);
-//                startActivity(intent1);
-//                break;
+            case R.id.nav_veiw_items:
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                startActivity(intent1);
+                break;
             case R.id.nav_profile:
                 Intent intent2 = new Intent(MainActivity.this,settingsActivity.class);
                 startActivity(intent2);
@@ -342,25 +336,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 navUserEmail.setText(menuEmailString);
             }
         });
+
+
+
     }
 
-    void logoutAlert() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Logout");
-        builder.setTitle("Are you sure?");
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent = new Intent(MainActivity.this,Categories.class);
-                startActivity(intent);
-            }
-        });
-        builder.setPositiveButton("Logout", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                setUpLogout();
-            }
-        });
-        builder.show();
-    }
 }

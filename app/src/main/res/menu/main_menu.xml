@@ -10,10 +10,10 @@
             android:id="@+id/nav_place_order"
             android:icon="@drawable/order_icon"
             android:title="Place Order" />
-<!--        <item-->
-<!--            android:id="@+id/nav_veiw_items"-->
-<!--            android:icon="@drawable/product_icon"-->
-<!--            android:title="Veiw Items" />-->
+        <item
+            android:id="@+id/nav_veiw_items"
+            android:icon="@drawable/product_icon"
+            android:title="Veiw Items" />
         <item
             android:id="@+id/nav_veiw_report"
             android:icon="@drawable/report_icon"

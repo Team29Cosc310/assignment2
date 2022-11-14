@@ -41,6 +41,8 @@ public class Categories extends AppCompatActivity implements NavigationView.OnNa
     NavigationView navigationView;
     Toolbar toolbar;
     //menuName & email
+    TextView menuName;
+    TextView menuEmail;
     String menuFirstNameString;
     String menuLastNameString;
     String menuEmailString;
@@ -233,17 +235,17 @@ public class Categories extends AppCompatActivity implements NavigationView.OnNa
                 Intent intent = new Intent(Categories.this,autoOrder.class);
                 startActivity(intent);
                 break;
-//            case R.id.nav_veiw_items:
-//                Intent intent1 = new Intent(Categories.this,Categories.class);
-//                startActivity(intent1);
-//                break;
+            case R.id.nav_veiw_items:
+                Intent intent1 = new Intent(Categories.this,Categories.class);
+                startActivity(intent1);
+                break;
             case R.id.nav_profile:
                 Intent intent2 = new Intent(Categories.this,settingsActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_logout:
                 mFirebaseAuth.signOut();
-                Intent intent3 = new Intent(Categories.this, Categories.class);
+                Intent intent3 = new Intent(Categories.this, MainActivity.class);
                 startActivity(intent3);
                 finish();
                 break;
