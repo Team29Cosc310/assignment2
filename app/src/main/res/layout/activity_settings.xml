@@ -22,16 +22,17 @@
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="0dp"
-        android:layout_height="272dp"
+        android:layout_height="227dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091">
+        app:layout_constraintVertical_bias="0.101">
 
         <TextView
             android:id="@+id/infoTitle"
@@ -56,11 +57,11 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
+            android:backgroundTint="@color/rhythm"
+            android:fontFamily="@font/americantypewriter"
             android:onClick="editAccount"
             android:text="Edit Account"
-            android:textColor="@color/lavender_blue"
-            android:backgroundTint="@color/rhythm"
-            android:fontFamily="@font/americantypewriter" />
+            android:textColor="@color/lavender_blue" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,8 +74,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55">
+        app:layout_constraintVertical_bias="0.712">
 
+
+        <TextView
+            android:id="@+id/admin_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Admin Settings:"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <Button
 
@@ -83,11 +93,11 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/rhythm"
+            android:fontFamily="@font/americantypewriter"
             android:onClick="editUsers"
             android:text="Edit Users"
-            android:textColor="@color/lavender_blue"
-            android:backgroundTint="@color/rhythm"
-            android:fontFamily="@font/americantypewriter"/>
+            android:textColor="@color/lavender_blue" />
 
         <Button
             android:id="@+id/editAccBut"
@@ -95,11 +105,11 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/rhythm"
+            android:fontFamily="@font/americantypewriter"
             android:onClick="createAccount"
             android:text="Create Account"
-            android:textColor="@color/lavender_blue"
-            android:backgroundTint="@color/rhythm"
-            android:fontFamily="@font/americantypewriter" />
+            android:textColor="@color/lavender_blue" />
 
     </LinearLayout>
 
