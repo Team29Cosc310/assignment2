@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".listItems.Item"
-    android:background="@color/bottle_green">
+    android:background="@color/lavender_blue">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40sp"
