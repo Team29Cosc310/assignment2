@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        setUpItemDetails();
 
         //logout
-//        logoutAlert();
+        logoutAlert();
     }
 
     // check if user is logged in
@@ -362,8 +362,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
         builder.show();
-    }
-    void moveToCat() {
-
     }
 }
