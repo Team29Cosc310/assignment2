@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.icu.util.BuddhistCalendar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.ArrayList;
+
 public class Categories extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -33,16 +36,16 @@ public class Categories extends AppCompatActivity {
     int[] productNum = new int[18];
     String[] productName = {"chai", "blondeRoast", "capp", "coffee", "coldbrew", "cups", "darkRoast", "flavour", "juice", "latte", "lids",
             "matcha", "mediumRoast", "milk", "sleeves", "stoppers", "sugar", "tea"};
+    ArrayList<String> items = new ArrayList<String>();
 
-
-
+    Intent intent;
     Button hotCof, coldCof, hotD, coldD, other, back, check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
-
+        intent = new Intent(this, autoOrder.class);
         hotCof = findViewById(R.id.hotCof);
         coldCof = findViewById(R.id.coldCof);
         hotD = findViewById(R.id.hotD);
@@ -155,7 +158,9 @@ public class Categories extends AppCompatActivity {
                         builder.setCancelable(true);
                         builder.setTitle("Low stock warning");
                         builder.setMessage("Please resupply " + productName[i] + ":");
-
+                        //fix
+                        items.add(productName[i]);
+                        //
                         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -178,7 +183,12 @@ public class Categories extends AppCompatActivity {
     }
     public void openOrderActivity()
     {
-        Intent intent = new Intent(this, autoOrder.class);
+
+        //pass to activty
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("items",items);
+        intent.putExtras(bundle);
+        //
         startActivity(intent);
     }
 }
