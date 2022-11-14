@@ -305,7 +305,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent1);
                 break;
             case R.id.nav_profile:
-                Intent intent2 = new Intent(MainActivity.this,settingsActivity.class);
+                Intent intent2 = new
+                Intent(MainActivity.this,settingsActivity.class);
+                intent2.putExtras(bundle);
                 startActivity(intent2);
                 break;
             case R.id.nav_logout:
