@@ -35,6 +35,7 @@ public class order_RVAdapter extends RecyclerView.Adapter<order_RVAdapter.MyView
     public void onBindViewHolder(@NonNull order_RVAdapter.MyViewHolder holder, int position) {
         holder.itemName.setText(orderItems.get(position).getItemName());
         holder.amount.setText((orderItems.get(position).getItemquantity()));
+
     }
 
     @Override
@@ -45,10 +46,12 @@ public class order_RVAdapter extends RecyclerView.Adapter<order_RVAdapter.MyView
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView itemName;
         TextView amount;
+        TextView price;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             itemName = itemView.findViewById(R.id.item_name);
             amount = itemView.findViewById(R.id.quantity);
+
         }
     }
 }
