@@ -103,6 +103,7 @@ Classes are organized in the java folder of the app project. These classes are t
 1. Saving report as a PDF on the device
     - Allows saving of sales and operations report as a PDF on the device's Documents folder when the user clicks the Save Report button. Added PdfBox-Android library (https://github.com/TomRoush/PdfBox-Android) to allow creating and saving PDF files in android.
 1. Auto Order that now orders now inventory
-   - the auto order functionality now updates the database when orders are placed. Also low stock warning integration so that users won't accidentally     double order. 
-
+   - the auto order functionality now updates the database when orders are placed. Also low stock warning integration so that users won't accidentally     double order.
+1. Item details data
+   - The listitems package to only include the Categories, Choices, and Item classes. The classes creates better functionality and occupy less space, so more efficient. Added different titles for specific items, to make it easier to understand and use.
 
