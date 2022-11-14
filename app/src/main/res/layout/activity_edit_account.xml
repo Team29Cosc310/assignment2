@@ -29,6 +29,21 @@
         app:layout_constraintVertical_bias="0.071" />
 
     <Button
+        android:id="@+id/backButton"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="-2sp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/americantypewriter"
+        android:text="@string/back"
+        android:textColor="@color/myrtle_green"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/editAcc_submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

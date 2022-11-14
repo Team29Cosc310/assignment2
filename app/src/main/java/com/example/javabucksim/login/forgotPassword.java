@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class forgotPassword extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,14 @@ public class forgotPassword extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        back = findViewById(R.id.backButton);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     //back button

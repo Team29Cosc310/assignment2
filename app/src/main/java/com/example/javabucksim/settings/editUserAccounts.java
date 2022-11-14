@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -34,6 +35,7 @@ public class editUserAccounts extends AppCompatActivity {
     Bundle bundle;
     Intent intent;
     String userId;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +47,18 @@ public class editUserAccounts extends AppCompatActivity {
         intent = getIntent();
         bundle = new Bundle();
 
+        back = findViewById(R.id.backButton);
+
         getData();
         setupSpinner();
         populateFields();
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 

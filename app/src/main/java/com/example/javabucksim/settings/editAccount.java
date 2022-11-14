@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class editAccount extends AppCompatActivity {
     FirebaseFirestore db;
     FirebaseAuth mAuth;
     Bundle bundle;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,19 @@ public class editAccount extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        back = findViewById(R.id.backButton);
+
         Intent intent = getIntent();
         bundle = intent.getExtras();
 
         populateFields();
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
