@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -300,7 +299,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(MainActivity.this,autoOrder.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_veiw_items:
+            case R.id.nav_view_items:
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 startActivity(intent1);
                 break;

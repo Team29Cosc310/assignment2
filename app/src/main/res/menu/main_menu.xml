@@ -11,9 +11,9 @@
             android:icon="@drawable/order_icon"
             android:title="Place Order" />
         <item
-            android:id="@+id/nav_veiw_items"
+            android:id="@+id/nav_view_items"
             android:icon="@drawable/product_icon"
-            android:title="Veiw Items" />
+            android:title="View Items" />
         <item
             android:id="@+id/nav_veiw_report"
             android:icon="@drawable/report_icon"
