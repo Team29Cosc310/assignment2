@@ -14,11 +14,6 @@ public class StatisticsReport {
     float employeeWorkHours;
     float totalEmployeeCosts;
 
-    // TODO: Will add implementation in next stage
-    public void saveReport(String fileName) throws IOException {
-
-    }
-
     public String toString() {
         String str = "Sales and Operations reports\n";
         str += "Number of drinks sold: " + Integer.toString(this.numberOfDrinksSold) + "\n";
@@ -29,7 +24,7 @@ public class StatisticsReport {
         str += "Number of Employees: " + Integer.toString(this.numberOfEmployees) + "\n";
         str += "Employee wage per hour: $" + Float.toString(this.employeeWagePerHour) + "/hr\n";
         str += "Employee work hours: " + Float.toString(this.employeeWorkHours) + " hours\n";
-        str += "Number of drinks sold: $" + Float.toString(this.totalEmployeeCosts) + "\n";
+        str += "Total employee costs: $" + Float.toString(this.totalEmployeeCosts) + "\n";
 
         return str;
     }

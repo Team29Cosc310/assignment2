@@ -1,25 +1,35 @@
 package com.example.javabucksim.listItems;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.javabucksim.listItems.coldCoffee.ColdCof;
-import com.example.javabucksim.listItems.coldDrink.ColdD;
-import com.example.javabucksim.listItems.hotCoffee.HotCof;
-import com.example.javabucksim.listItems.hotDrink.HotD;
-import com.example.javabucksim.MainActivity;
-import com.example.javabucksim.listItems.otherDrinks.Other;
+
+import com.google.android.material.navigation.NavigationView;
+
 import com.example.javabucksim.R;
 import com.example.javabucksim.orders.autoOrder;
+
+
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -27,6 +37,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class Categories extends AppCompatActivity {
+//        implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mFirebaseAuth;
@@ -35,13 +46,45 @@ public class Categories extends AppCompatActivity {
             "matcha", "mediumRoast", "milk", "sleeves", "stoppers", "sugar", "tea"};
 
 
+//    //menu
+//    DrawerLayout drawerLayout;
+//    NavigationView navigationView;
+//    Toolbar toolbar;
+//    //menuName & email
+//    TextView menuName;
+//    TextView menuEmail;
+//    String menuFirstNameString;
+//    String menuLastNameString;
+//    String menuEmailString;
+//    FirebaseUser user;
+
+
 
     Button hotCof, coldCof, hotD, coldD, other, back, check;
+    String choice1, choice2, choice3, choice4, choice5, category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
+
+//        //menu
+//        drawerLayout = findViewById(R.id.drawer_layout);
+//        navigationView = findViewById(R.id.nav_view);
+//        toolbar = findViewById(R.id.toolbar);
+//
+//        //toolbar
+//        setSupportActionBar(toolbar);
+//        //nav_drawer
+//        navigationView.bringToFront();
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+//        drawerLayout.addDrawerListener(toggle);
+//        drawerLayout.setScrimColor(Color.parseColor("#32000000"));
+//        toggle.syncState();
+//        navigationView.setNavigationItemSelectedListener(this);
+//        //headerInfo
+//        setMenuNameAndEmail();
+
 
         hotCof = findViewById(R.id.hotCof);
         coldCof = findViewById(R.id.coldCof);
@@ -63,40 +106,108 @@ public class Categories extends AppCompatActivity {
         hotCof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent hotCof_intent = new Intent(Categories.this, HotCof.class);
-                startActivity(hotCof_intent);
+                category = "Hot Coffees";
+                choice1 = "Pumpkin Spice Latte";
+                choice2 = "Dark Roast";
+                choice3 = "Medium Roast";
+                choice4 = "Blonde Roast";
+                choice5 = "Cappuccino";
+                Intent intent = new Intent(Categories.this, Choices.class);
+                intent.putExtra("category", category);
+                intent.putExtra("choice1", choice1);
+                intent.putExtra("choice2", choice2);
+                intent.putExtra("choice3", choice3);
+                intent.putExtra("choice4", choice4);
+                intent.putExtra("choice5", choice5);
+                startActivity(intent);
             }
         });
 
         coldCof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent coldCof_intent = new Intent(Categories.this, ColdCof.class);
-                startActivity(coldCof_intent);
+                category = "Cold Coffees";
+                choice1 = "Iced Pumpkin Spice Latte";
+                choice2 = "Iced Coffee";
+                choice3 = "Iced Latte";
+                choice4 = "Cold Brew";
+                choice5 = "Iced Cappuccino";
+                Intent intent = new Intent(Categories.this, Choices.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("category", category);
+                bundle.putString("choice1", choice1);
+                bundle.putString("choice2", choice2);
+                bundle.putString("choice3", choice3);
+                bundle.putString("choice4", choice4);
+                bundle.putString("choice5", choice5);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         hotD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent hotD_intent = new Intent(Categories.this, HotD.class);
-                startActivity(hotD_intent);
+                category = "Hot Drinks";
+                choice1 = "Pumpkin Chai Latte";
+                choice2 = "Tea";
+                choice3 = "Hot Chocolate";
+                choice4 = "Chai Latte";
+                choice5 = "Matcha Latte";
+                Intent intent = new Intent(Categories.this, Choices.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("category", category);
+                bundle.putString("choice1", choice1);
+                bundle.putString("choice2", choice2);
+                bundle.putString("choice3", choice3);
+                bundle.putString("choice4", choice4);
+                bundle.putString("choice5", choice5);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         coldD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent coldD_intent = new Intent(Categories.this, ColdD.class);
-                startActivity(coldD_intent);
+                category = "Cold Drinks";
+                choice1 = "Iced Pumpkin Chai Latte";
+                choice2 = "Iced Tea";
+                choice3 = "Iced Chai Latte";
+                choice4 = "Iced Matcha Latte";
+                choice5 = "Juice";
+                Intent intent = new Intent(Categories.this, Choices.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("category", category);
+                bundle.putString("choice1", choice1);
+                bundle.putString("choice2", choice2);
+                bundle.putString("choice3", choice3);
+                bundle.putString("choice4", choice4);
+                bundle.putString("choice5", choice5);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent other_intent = new Intent(Categories.this, Other.class);
-                startActivity(other_intent);
+                category = "Other";
+                choice1 = "Flavour Shots";
+                choice2 = "Espresso";
+                choice3 = "Milk";
+                choice4 = "Cream";
+                choice5 = "Sugar";
+                Intent intent = new Intent(Categories.this, Choices.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("category", category);
+                bundle.putString("choice1", choice1);
+                bundle.putString("choice2", choice2);
+                bundle.putString("choice3", choice3);
+                bundle.putString("choice4", choice4);
+                bundle.putString("choice5", choice5);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
@@ -180,5 +291,74 @@ public class Categories extends AppCompatActivity {
     {
         Intent intent = new Intent(this, autoOrder.class);
         startActivity(intent);
+    }
+
+//    @Override
+//    public void onBackPressed() {
+//
+//        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+//            drawerLayout.closeDrawer(GravityCompat.START);
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
+//
+//    //menuMethods
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//            case R.id.nav_home:
+//                break;
+//            case R.id.nav_place_order:
+//                Intent intent = new Intent(Categories.this,autoOrder.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.nav_veiw_items:
+//                Intent intent1 = new Intent(Categories.this,Categories.class);
+//                startActivity(intent1);
+//                break;
+//            case R.id.nav_profile:
+//                Intent intent2 = new Intent(Categories.this,settingsActivity.class);
+//                startActivity(intent2);
+//                break;
+//            case R.id.nav_logout:
+//                mFirebaseAuth.signOut();
+//                Intent intent3 = new Intent(Categories.this, MainActivity.class);
+//                startActivity(intent3);
+//                finish();
+//                break;
+//            case R.id.nav_veiw_report:
+//                Intent intent4 = new Intent(Categories.this, reportActivity.class);
+//                startActivity(intent4);
+//                break;
+//        }
+//        return true;
+//    }
+//    void setMenuNameAndEmail() {
+//        user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
+//
+//
+//
+//        DocumentReference documentReference = db.collection("users").document(uid);
+//        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+//                menuFirstNameString = value.getString("firstName");
+//                menuLastNameString = value.getString("lastName");
+//                menuEmailString = value.getString("email");
+//                View headView = navigationView.getHeaderView(0);
+//                TextView navUserName = (TextView) headView.findViewById(R.id.menuName);
+//                TextView navUserEmail = (TextView) headView.findViewById(R.id.menuEmail);
+//                navUserName.setText(menuFirstNameString + " " + menuLastNameString);
+//                navUserEmail.setText(menuEmailString);
+//            }
+//        });
+//    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

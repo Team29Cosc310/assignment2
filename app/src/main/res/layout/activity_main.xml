@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="#C6D4FF"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity"
+    tools:openDrawer="start">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+
 
     <TextView
         android:id="@+id/textViewResult"
@@ -44,6 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_layout"
         android:layout_width="373dp"
@@ -56,11 +75,25 @@
         app:layout_constraintVertical_bias="0.96">
 
         <Button
+            android:id="@+id/place_order"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="2dp"
+            android:onClick="placeOrder"
+            android:text="Place Order"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/items"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
             android:id="@+id/settingsButton"
             android:layout_width="170dp"
             android:layout_height="60dp"
             android:layout_marginBottom="164dp"
             android:text="Admin Settings"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.078"
@@ -73,6 +106,7 @@
             android:background="@drawable/round_btn"
             android:backgroundTint="@color/rhythm"
             android:text="Logout"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
@@ -86,51 +120,57 @@
             android:layout_height="60dp"
             android:layout_marginTop="2dp"
             android:text="View Report"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.078"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settingsButton" />
 
-        <!--=======-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Place Order"-->
-<!--            android:textColor="@color/lavender_blue"-->
-<!--            android:backgroundTint="@color/rhythm"-->
-<!--            android:onClick="placeOrder"-->
-<!--            android:fontFamily="@font/americantypewriter"-->
-<!--&gt;>>>>>> main-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.067"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.063" />-->
-
-        <Button
-            android:id="@+id/place_order"
-
-            android:layout_width="170dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:onClick="placeOrder"
-            android:text="Place Order"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Place Order"-->
+        <!--            android:textColor="@color/lavender_blue"-->
+        <!--            android:backgroundTint="@color/rhythm"-->
+        <!--            android:onClick="placeOrder"-->
+        <!--            android:fontFamily="@font/americantypewriter"-->
+        <!--&gt;>>>>>> main-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.067"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintVertical_bias="0.063" />-->
 
         <Button
             android:id="@+id/items"
             android:layout_width="170dp"
             android:layout_height="60dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="100dp"
             android:layout_marginBottom="2dp"
             android:text="View Items"
+            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/settingsButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/place_order" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/coffee_pic" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

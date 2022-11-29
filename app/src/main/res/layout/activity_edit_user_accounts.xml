@@ -27,6 +27,21 @@
         app:layout_constraintVertical_bias="0.071" />
 
     <Button
+        android:id="@+id/backButton"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="-2sp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/americantypewriter"
+        android:text="@string/back"
+        android:textColor="@color/myrtle_green"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/editUsr_submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,8 +57,8 @@
         app:layout_constraintVertical_bias="0.879" />
 
     <LinearLayout
-        android:layout_width="377dp"
-        android:layout_height="335dp"
+        android:layout_width="387dp"
+        android:layout_height="421dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,8 +81,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:fontFamily="@font/americantypewriter" />
+            android:fontFamily="@font/americantypewriter"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView7"
@@ -83,8 +98,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:fontFamily="@font/americantypewriter" />
+            android:fontFamily="@font/americantypewriter"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView9"
@@ -101,8 +116,8 @@
             android:layout_height="50dp"
             android:ems="10"
             android:enabled="false"
-            android:inputType="none"
-            android:fontFamily="@font/americantypewriter" />
+            android:fontFamily="@font/americantypewriter"
+            android:inputType="none" />
 
         <TextView
             android:id="@+id/textView8"
@@ -113,13 +128,26 @@
             android:text="Change password"
             android:textColor="@color/myrtle_green" />
 
-        <EditText
-            android:id="@+id/et_editUsr_pw"
+        <CheckBox
+            android:id="@+id/edit_user_checkBox"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:fontFamily="@font/americantypewriter" />
+            android:layout_height="wrap_content"
+            android:text="Send password reset email" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/americantypewriter"
+            android:paddingLeft="5dp"
+            android:text="Change Role"
+            android:textColor="@color/myrtle_green" />
+
+        <Spinner
+            android:id="@+id/edit_user_role_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

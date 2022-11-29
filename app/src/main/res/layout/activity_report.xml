@@ -21,12 +21,13 @@
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textViewReportTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/americantypewriter"
-        android:text="Sales and Operations Reports"
+        android:text="Sales and Operations Report"
         android:textColor="@color/bottle_green"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

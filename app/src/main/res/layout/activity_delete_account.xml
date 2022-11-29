@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#C6D4FF">
 
-
     <Button
         android:id="@+id/delete_submit_button"
         android:layout_width="wrap_content"

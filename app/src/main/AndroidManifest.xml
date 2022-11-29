@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,10 +16,18 @@
         android:theme="@style/Theme.JavabucksIM"
         tools:targetApi="31">
         <activity
+            android:name=".listItems.Item"
+            android:exported="false"
+            android:parentActivityName=".listItems.Choices"/>
+        <activity
+            android:name=".listItems.Choices"
+            android:exported="false"
+            android:parentActivityName=".listItems.Categories"/>
+        <activity
             android:name=".settings.editUserAccounts"
+            android:exported="false"
             android:label="Edit User Info"
-            android:parentActivityName=".settings.editUsers"
-            android:exported="false">
+            android:parentActivityName=".settings.editUsers">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -35,16 +43,6 @@
         <activity
             android:name=".reportActivity"
             android:exported="false" />
-
-        <activity
-            android:name=".settings.deleteAccount"
-            android:exported="false"
-            android:label="Delete Account"
-            android:parentActivityName=".settings.settingsActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
             android:name=".settings.editUsers"
             android:exported="false"
@@ -123,9 +121,9 @@
             android:exported="false"
             android:label="Edit Account"
             android:parentActivityName=".listItems.Categories">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
             android:name=".listItems.hotCoffee.HotCof1"

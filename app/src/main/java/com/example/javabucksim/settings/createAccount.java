@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.chad.designtoast.DesignToast;
 import com.example.javabucksim.R;
+import com.example.javabucksim.login.loginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,6 +30,7 @@ public class createAccount extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth;
     Map<String, Object> newUser;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,16 @@ public class createAccount extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        back = findViewById(R.id.backButton);
+
         setupSpinner();
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
@@ -68,12 +81,12 @@ public class createAccount extends AppCompatActivity {
         String role = ((Spinner) findViewById(R.id.role_spinner)).getSelectedItem().toString();
 
         if (email.isEmpty() || password.isEmpty()){
-            Toast.makeText(createAccount.this,"Please enter valid email and password",Toast.LENGTH_SHORT).show();
+            DesignToast.makeText(createAccount.this, "Please enter valid email and password", DesignToast.LENGTH_SHORT, DesignToast.TYPE_WARNING).show();
             return;
         }
 
         if (password.length() < 6){
-            Toast.makeText(createAccount.this,"Password must be at least 6 characters",Toast.LENGTH_SHORT).show();
+            DesignToast.makeText(createAccount.this, "Password must be at least 6 characters", DesignToast.LENGTH_SHORT, DesignToast.TYPE_WARNING).show();
             return;
         }
 
@@ -99,13 +112,13 @@ public class createAccount extends AppCompatActivity {
                     db.collection("users").document(newUid).set(newUser).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(createAccount.this, "Account successfully created", Toast.LENGTH_SHORT).show();
+                            DesignToast.makeText(createAccount.this, "Account successfully created", DesignToast.LENGTH_SHORT, DesignToast.TYPE_SUCCESS).show();
                             finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(createAccount.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                            DesignToast.makeText(createAccount.this, "Something went wrong", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                         }
                     });
 
