@@ -11,11 +11,7 @@
     tools:context=".MainActivity"
     tools:openDrawer="start">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
@@ -126,21 +122,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settingsButton" />
 
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="Place Order"-->
-        <!--            android:textColor="@color/lavender_blue"-->
-        <!--            android:backgroundTint="@color/rhythm"-->
-        <!--            android:onClick="placeOrder"-->
-        <!--            android:fontFamily="@font/americantypewriter"-->
-        <!--&gt;>>>>>> main-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.067"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"-->
-        <!--            app:layout_constraintVertical_bias="0.063" />-->
-
         <Button
             android:id="@+id/items"
             android:layout_width="170dp"
@@ -153,10 +134,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.078"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
 
         <ImageView
             android:id="@+id/imageView3"

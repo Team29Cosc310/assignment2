@@ -8,14 +8,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.javabucksim.DrawerBaseActivity;
 import com.example.javabucksim.R;
+import com.example.javabucksim.databinding.ActivityChoicesBinding;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Choices extends AppCompatActivity {
+public class Choices extends DrawerBaseActivity {
+
+    ActivityChoicesBinding activityChoicesBinding;
 
     Button choice1, choice2, choice3, choice4, choice5, back;
     TextView category;
@@ -24,7 +28,8 @@ public class Choices extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choices);
+        activityChoicesBinding = ActivityChoicesBinding.inflate(getLayoutInflater());
+        setContentView(activityChoicesBinding.getRoot());
 
         back = findViewById(R.id.backButton);
         category = findViewById(R.id.category);

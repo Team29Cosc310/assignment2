@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.designtoast.DesignToast;
+import com.example.javabucksim.databinding.ActivityReportBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +30,10 @@ import java.io.IOException;
 import java.util.Map;
 
 
-public class reportActivity extends AppCompatActivity {
+public class reportActivity extends DrawerBaseActivity {
+
+    ActivityReportBinding activityReportBinding;
+
     private FirebaseAuth mFirebaseAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     StatisticsReport statReport = new StatisticsReport();
@@ -38,7 +42,8 @@ public class reportActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report);
+        activityReportBinding = ActivityReportBinding.inflate(getLayoutInflater());
+        setContentView(activityReportBinding.getRoot());
 
         back = findViewById(R.id.backButton);
 

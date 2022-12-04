@@ -12,8 +12,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.javabucksim.DrawerBaseActivity;
 import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.R;
+import com.example.javabucksim.databinding.ActivitySettingsBinding;
 import com.example.javabucksim.listItems.Categories;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -24,7 +26,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Map;
 
-public class settingsActivity extends AppCompatActivity {
+public class settingsActivity extends DrawerBaseActivity {
+
+    ActivitySettingsBinding activitySettingsBinding;
 
     private Bundle bundle;
     private String role;
@@ -35,7 +39,8 @@ public class settingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        activitySettingsBinding = ActivitySettingsBinding.inflate(getLayoutInflater());
+        setContentView(activitySettingsBinding.getRoot());
 
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();

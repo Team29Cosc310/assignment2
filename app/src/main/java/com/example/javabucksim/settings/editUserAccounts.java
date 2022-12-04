@@ -13,7 +13,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.chad.designtoast.DesignToast;
+import com.example.javabucksim.DrawerBaseActivity;
 import com.example.javabucksim.R;
+import com.example.javabucksim.databinding.ActivityEditUserAccountsBinding;
 import com.example.javabucksim.login.forgotPassword;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,7 +29,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-public class editUserAccounts extends AppCompatActivity {
+public class editUserAccounts extends DrawerBaseActivity {
+
+    ActivityEditUserAccountsBinding activityEditUserAccountsBinding;
 
     FirebaseFirestore db;
     FirebaseAuth mAuth;
@@ -38,7 +42,8 @@ public class editUserAccounts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_user_accounts);
+        activityEditUserAccountsBinding = ActivityEditUserAccountsBinding.inflate(getLayoutInflater());
+        setContentView(activityEditUserAccountsBinding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();

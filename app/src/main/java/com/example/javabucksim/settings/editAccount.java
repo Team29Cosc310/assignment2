@@ -12,8 +12,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.chad.designtoast.DesignToast;
+import com.example.javabucksim.DrawerBaseActivity;
 import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.R;
+import com.example.javabucksim.databinding.ActivityEditAccountBinding;
 import com.example.javabucksim.login.loginActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,7 +25,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
-public class editAccount extends AppCompatActivity {
+public class editAccount extends DrawerBaseActivity {
+
+    ActivityEditAccountBinding activityEditAccountBinding;
 
     FirebaseFirestore db;
     FirebaseAuth mAuth;
@@ -32,7 +36,8 @@ public class editAccount extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_account);
+        activityEditAccountBinding = ActivityEditAccountBinding.inflate(getLayoutInflater());
+        setContentView(activityEditAccountBinding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();

@@ -11,7 +11,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.example.javabucksim.DrawerBaseActivity;
 import com.example.javabucksim.R;
+import com.example.javabucksim.databinding.ActivityEditUsersBinding;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -21,7 +23,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class editUsers extends AppCompatActivity {
+public class editUsers extends DrawerBaseActivity {
+
+    ActivityEditUsersBinding activityEditUsersBinding;
 
     RecyclerView recyclerView;
     ArrayList<User> userArrayList;
@@ -32,7 +36,8 @@ public class editUsers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_users);
+        activityEditUsersBinding = ActivityEditUsersBinding.inflate(getLayoutInflater());
+        setContentView(activityEditUsersBinding.getRoot());
 
         // can start progress bar here
         ProgressBar progBar = findViewById(R.id.idProgressBar);
