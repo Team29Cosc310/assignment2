@@ -38,6 +38,7 @@ public class reportActivity extends DrawerBaseActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     StatisticsReport statReport = new StatisticsReport();
     Button back;
+    Button graph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,13 @@ public class reportActivity extends DrawerBaseActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        graph = findViewById(R.id.graph);
+        graph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                graphActivity();
             }
         });
     }
@@ -183,5 +191,9 @@ public class reportActivity extends DrawerBaseActivity {
             DesignToast.makeText(getApplicationContext(),"Error saving report",DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
             //Toast.makeText(getApplicationContext(),"Error saving report",Toast.LENGTH_SHORT).show();
         }
+    }
+    void graphActivity() {
+        Intent intent = new Intent(reportActivity.this,test.class);
+        startActivity(intent);
     }
 }

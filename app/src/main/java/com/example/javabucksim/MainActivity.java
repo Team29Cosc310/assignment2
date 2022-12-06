@@ -25,6 +25,10 @@ import com.example.javabucksim.listItems.Categories;
 import com.example.javabucksim.login.loginActivity;
 import com.example.javabucksim.orders.autoOrder;
 import com.example.javabucksim.settings.settingsActivity;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -42,6 +46,9 @@ import java.util.Map;
 public class MainActivity extends DrawerBaseActivity {
 
     ActivityMainBinding activityMainBinding;
+
+    GoogleSignInOptions googleSignInOptions;
+    GoogleSignInClient googleSignInClient;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mFirebaseAuth;
@@ -69,7 +76,17 @@ public class MainActivity extends DrawerBaseActivity {
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(activityMainBinding.getRoot());
 
+        //googleSignIn
+        googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
 
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if(account != null) {
+            String personName = account.getDisplayName();
+            String personEmail = account.getEmail();
+            menuName.setText(personName);
+            menuEmail.setText(personEmail);
+        }
         //headerInfo
 //        setMenuNameAndEmail();
 

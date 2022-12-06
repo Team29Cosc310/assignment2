@@ -1,6 +1,7 @@
 package com.example.javabucksim.login;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,12 @@ import android.widget.Toast;
 import com.chad.designtoast.DesignToast;
 import com.example.javabucksim.MainActivity;
 import com.example.javabucksim.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -24,16 +31,38 @@ public class loginActivity extends AppCompatActivity {
 
     private FirebaseAuth mFirebaseAuth;
 
+    GoogleSignInOptions googleSignInOptions;
+    GoogleSignInClient googleSignInClient;
+
+    SignInButton signInButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+
+        // Set the dimensions of the sign-in button.
+        signInButton = findViewById(R.id.sign_in_button);
+
+        googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
+
+
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
+            }
+        });
+
 
         EditText etEmail = findViewById(R.id.editTextEmail);
         EditText etPW = findViewById(R.id.editTextPW);
         Button loginBut = findViewById(R.id.loginButton);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+
 
         loginBut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +102,6 @@ public class loginActivity extends AppCompatActivity {
                 } else {
                     DesignToast.makeText(loginActivity.this, "Please enter a valid email and password.", DesignToast.LENGTH_SHORT, DesignToast.TYPE_ERROR).show();
                 }
-
             }
         });
 
@@ -99,4 +127,29 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
+    void signIn() {
+        Intent signInIntent = googleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent,1000);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
+            try {
+                task.getResult(ApiException.class);
+                navigateToMain();
+            } catch (ApiException e) {
+                Toast.makeText(getApplicationContext(), "Something went wrong",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    void navigateToMain() {
+        finish();
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 }

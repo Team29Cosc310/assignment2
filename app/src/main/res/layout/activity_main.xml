@@ -127,13 +127,13 @@
             android:layout_width="170dp"
             android:layout_height="60dp"
             android:layout_marginStart="100dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="5dp"
             android:text="View Items"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/settingsButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.078"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <ImageView
             android:id="@+id/imageView3"

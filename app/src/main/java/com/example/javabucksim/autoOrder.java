@@ -22,6 +22,7 @@ public class autoOrder extends DrawerBaseActivity {
 
     ActivityAutoordBinding activityAutoordBinding;
 
+
     private FirebaseAuth mFirebaseAuth;
     RecyclerView recyclerView;
     ArrayList<orderTile> orderItems= new ArrayList<>();
